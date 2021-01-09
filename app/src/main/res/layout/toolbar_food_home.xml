@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_80"
+    android:background="@drawable/profile_bg"
+    android:contentInsetStart="0dp"
+    android:contentInsetLeft="0dp"
+    android:contentInsetEnd="0dp"
+    android:contentInsetRight="0dp"
+    android:minHeight="?attr/actionBarSize"
+    app:contentInsetEnd="0dp"
+    app:contentInsetLeft="0dp"
+    app:contentInsetRight="0dp"
+    app:contentInsetStart="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/dp_8"
+        android:paddingEnd="@dimen/dp_8">
+
+        <ImageView
+            android:id="@+id/img_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/ic_outline_location" />
+
+        <LinearLayout
+            android:id="@+id/deliver_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Deliver To"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_title_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:drawableRight="@drawable/ic_arrow_white_right"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="537 Baker St, NY"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/img_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/dp_5"
+            android:contentDescription="@string/favourite"
+            android:padding="@dimen/dp_5"
+            android:src="@drawable/ic_search_white" />
+
+        <ImageView
+            android:id="@+id/img_filter"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:contentDescription="@string/chat"
+            android:padding="@dimen/dp_5"
+            android:src="@mipmap/ic_filter" />
+    </LinearLayout>
+</androidx.appcompat.widget.Toolbar>

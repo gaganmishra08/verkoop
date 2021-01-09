@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_bag"
+    android:orientation="vertical">
+<com.verkoopapp.fonts.textView.GothiBoldTextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_marginTop="@dimen/dp_10"
+    android:layout_marginBottom="@dimen/dp_10"
+    android:textSize="@dimen/sp_14"
+    android:textColor="@color/brown"
+    android:visibility="gone"
+    android:text="@string/use_coins_for_bumps_and_listing_frees"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCoinsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+        <ProgressBar
+            android:id="@+id/pbProgressCoin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible" />
+    </FrameLayout>
+</LinearLayout>

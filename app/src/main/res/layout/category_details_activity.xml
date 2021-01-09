@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_details_" />
+
+<!--    <LinearLayout-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/dp_55"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:background="@color/colorPrimary"-->
+<!--        android:baselineAligned="false"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingStart="@dimen/dp_12">-->
+
+<!--        <TextView-->
+<!--            android:visibility="gone"-->
+<!--            android:id="@+id/ivFilter"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginEnd="@dimen/dp_6"-->
+<!--            android:drawablePadding="@dimen/dp_10"-->
+<!--            android:drawableStart="@mipmap/filter"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="@dimen/dp_8"-->
+<!--            android:text="@string/filter"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/sp_14" />-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:visibility="gone"-->
+<!--            android:id="@+id/rvFilterSelected"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content" />-->
+<!--    </LinearLayout>-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.verkoopapp.fonts.textView.GothiBoldTextView
+            android:id="@+id/tvMssgData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/no_result_found"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/sp_14"
+            android:visibility="gone"/>
+
+        <ScrollView
+            android:id="@+id/scroll_view_category_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/llParent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.verkoopapp.fonts.textView.GothiBoldTextView
+                        android:id="@+id/tvCategorySelected"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_12"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/sp_14" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvSubCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/dp_12"
+                        android:layout_marginStart="@dimen/dp_5"
+                        android:layout_marginTop="@dimen/dp_8" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_1"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="@dimen/dp_8"
+                        android:layout_marginStart="@dimen/dp_8"
+                        android:background="@color/gray_back" />
+
+                </LinearLayout>
+
+                <com.verkoopapp.utils.NonscrollRecylerview
+                    android:id="@+id/rvItemListDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray_back"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/pvProgressDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/gradation_black"
+            android:gravity="center">
+
+            <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_20"
+                card_view:cardCornerRadius="@dimen/dp_20"
+                card_view:cardElevation="@dimen/dp_8">
+
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:id="@+id/tvSell"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/red_rectangular_shape"
+                    android:gravity="center"
+                    android:padding="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_35"
+                    android:paddingStart="@dimen/dp_35"
+                    android:text="@string/sell"
+                    android:textColor="@color/white" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

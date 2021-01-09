@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#CF2027</color>
+    <color name="colorPrimaryDark">#CF2027</color>
+
+
+    <color name="text_color">#CF2027</color>
+    <color name="text_gray">#686868</color>
+    <color name="text_gray_">#696969</color>
+    <color name="text_gray__">#9A9A9B</color>
+    <color name="semi_white">#EFEFEF</color>
+    <color name="colorAccent">#CF2027</color>
+    <color name="light_gray">#9C9C9C</color>
+    <color name="dark_black">#222222</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_bag">#FAFAFA</color>
+    <color name="light_grey">#F0F0F7</color>
+    <color name="transparent">#00000000</color>
+    <color name="light_red">#FAE8E9</color>
+    <color name="red">#c0392b</color>
+    <color name="gray">#A3A3A3</color>
+    <color name="gray_light">#A8A8A8</color>
+    <color name="gray_white_">#E7E7E7</color>
+    <color name="gray_">#f5f5f5</color>
+    <color name="gray_semi">#E6E6E6</color>
+    <color name="gray_se">#9F9F9F</color>
+    <color name="black_">#111111</color>
+    <color name="black_dark">#1A1A1A</color>
+    <color name="black_light">#0F0F0F</color>
+    <color name="green_light">#67CA4C</color>
+    <color name="yellow">#F9AA34</color>
+    <color name="red_light">#EB1C24</color>
+    <color name="light_gry">#E2E2E2</color>
+    <color name="brown">#696969</color>
+    <color name="light_black">#c9c8cd</color>
+    <color name="gray_date">#D5D9D8</color>
+    <color name="gray_back">#EDF0F7</color>
+    <color name="blue">#4393CE</color>
+    <color name="blue_dark">#38A0E4</color>
+    <color name="blue_light">#CDECFF</color>
+    <color name="trans_red">#D9c0392b</color>
+    <color name="light_gray_view">#A3A3A3</color>
+    <color name="light_gray_chat">#BFBEC3</color>
+    <color name="accept_offer">#67CA4C</color>
+    <color name="shape_gray">#B1B1B1</color>
+    <color name="facebookcolor">#32579B</color>
+    <color name="googlecolor">#F33D33</color>
+    <color name="coinbackgroundcolor">#FF8C39</color>
+    <color name="colorDivider">#CACACA</color>
+    <color name="colorDividerLight">#C7C7C7</color>
+    <color name="colorDividerLighter">#E2E2E2</color>
+
+
+    <color name="transparentBlack20">#20000000</color>
+    <color name="transparentBlack60">#60000000</color>
+    <color name="transparentBlack80">#80000000</color>
+    <color name="transparentBlack90">#90000000</color>
+    <color name="transparentBlack99">#D8000000</color>
+    <color name="orange_coins">#ff8c39</color>
+</resources>

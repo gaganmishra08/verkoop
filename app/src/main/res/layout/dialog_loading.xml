@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/transparent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.github.florent37.shapeofview.shapes.RoundRectView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:shape_roundRect_bottomLeftRadius="@dimen/dp_8"
+        app:shape_roundRect_bottomRightRadius="@dimen/dp_8"
+        app:shape_roundRect_topLeftRadius="@dimen/dp_8"
+        app:shape_roundRect_topRightRadius="@dimen/dp_8">
+
+        <FrameLayout
+            android:background="@color/light_grey"
+            android:padding="@dimen/dp_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.tuyenmonkey.mkloader.MKLoader
+                android:id="@+id/mkl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:mk_type="FishSpinner"
+                app:mk_color="@color/colorPrimary"
+                />
+        </FrameLayout>
+    </com.github.florent37.shapeofview.shapes.RoundRectView>
+</LinearLayout>

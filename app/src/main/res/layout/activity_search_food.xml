@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SearchFoodActivity">
+
+    <include
+        android:id="@+id/search_tool_lyt"
+        layout="@layout/toolbar_search_food" />
+
+
+    <com.verkoopapp.fonts.textView.GothiBoldTextView
+        android:id="@+id/tv_discover_restro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="32 Resturants Found"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_tool_lyt" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_discover_restro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_15"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/dp_120"
+        android:nestedScrollingEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_discover_restro" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

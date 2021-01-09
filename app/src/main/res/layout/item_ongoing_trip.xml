@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llParentItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/lyt_ongoing"
+        android:layout_width="match_parent"
+        android:background="@drawable/dividergray_rectangle_shape"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_8"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_5"
+            android:paddingTop="@dimen/dp_5">
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/dp_10"
+                        android:paddingStart="@dimen/dp_8"
+                        android:paddingTop="@dimen/dp_10"
+                        tools:ignore="RtlSymmetry">
+
+                        <com.verkoopapp.fonts.textView.GothiBoldTextView
+                            android:id="@+id/tvEstimateArrival"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="@string/estimated_arrival_09_10_pm"
+                            android:textSize="@dimen/sp_16" />
+
+                        <com.verkoopapp.fonts.textView.GothicThinTextView
+                            android:id="@+id/tv_order_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Delivery: #3456789"
+                            android:layout_marginTop="@dimen/dp_8"
+                            android:textColor="@color/light_gray"
+                            android:textSize="@dimen/sp_14" />
+
+
+                    </LinearLayout>
+
+                    <com.verkoopapp.fonts.textView.GothiBoldTextView
+                        android:id="@+id/tv_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawablePadding="@dimen/sp_8"
+                        android:drawableStart="@drawable/ic_arrow_drop_down"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_14" />
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+    </FrameLayout>
+
+</LinearLayout>

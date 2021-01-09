@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_button1"
+        android:icon="@drawable/tab_button1_selector"
+        android:title="@string/browse" />
+
+    <item
+        android:id="@+id/menu_button2"
+        android:icon="@drawable/tab_button2_selector"
+        android:title="@string/favourite_" />
+
+    <item
+        android:id="@+id/vervo_button"
+        android:icon="@drawable/tab_button4_selector"
+        android:title="@string/vervo" />
+
+
+<!--    <item-->
+<!--        android:id="@+id/vervo_button"-->
+<!--        android:icon="@drawable/tab_button2_selector"-->
+<!--        android:title="@string/vervo" />-->
+
+
+    <item
+        android:id="@+id/menu_button3"
+        android:icon="@drawable/tab_button3_selector"
+        android:title="@string/profile" />
+
+</menu>

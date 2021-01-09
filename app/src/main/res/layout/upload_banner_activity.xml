@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_location" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- <ScrollView
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:fillViewport="true">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_180"
+                android:background="@color/gray_semi">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dp_10"
+                    android:background="@drawable/dotted_rectangular_shape"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        tools:ignore="UselessParent">
+
+                        <com.verkoopapp.fonts.textView.GothicThinTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/picture_safe_area"
+                            android:textColor="@color/text_gray"
+                            android:textSize="@dimen/sp_20" />
+
+                        <com.verkoopapp.fonts.textView.GothiBoldTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:text="W 750 * H 340"
+                            android:textColor="@color/text_gray"
+                            android:textSize="@dimen/sp_18" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ivBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/banner"
+                    android:scaleType="fitXY" />
+            </FrameLayout>
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_40"
+                android:layout_marginStart="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_18"
+                android:gravity="center"
+                android:text="@string/it_is_a_long_established_fact_that_a_reader_will_be_distracted_by_the_readable_content"
+                android:textSize="@dimen/sp_14" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tvUploadImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_35"
+                android:background="@drawable/red_transparent_circle_shape"
+                android:gravity="center"
+                android:paddingBottom="@dimen/dp_12"
+                android:paddingEnd="@dimen/dp_40"
+                android:paddingStart="@dimen/dp_40"
+                android:paddingTop="@dimen/dp_12"
+                android:text="@string/upload_your_image"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_14" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tvSelectCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/red_transparent_circle_shape"
+                android:gravity="center"
+                android:paddingBottom="@dimen/dp_12"
+                android:paddingEnd="@dimen/dp_40"
+                android:paddingStart="@dimen/dp_40"
+                android:paddingTop="@dimen/dp_12"
+                android:text="@string/select_category"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_14" />
+
+        </LinearLayout>
+
+        <!-- </ScrollView>-->
+        <com.verkoopapp.fonts.textView.GothiBoldTextView
+            android:id="@+id/tvSaveBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_30"
+            android:background="@drawable/red_rectangular_shape"
+            android:elevation="@dimen/dp_8"
+            android:padding="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_35"
+            android:paddingStart="@dimen/dp_35"
+            android:text="@string/next"
+            android:textColor="@color/white" />
+
+        <ProgressBar
+            android:id="@+id/pbUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>

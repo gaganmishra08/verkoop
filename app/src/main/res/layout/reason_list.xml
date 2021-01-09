@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <com.verkoopapp.fonts.textView.GothiBoldTextView
+        android:id="@+id/tvReportName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_18"
+        android:textColor="@color/brown"
+        android:padding="@dimen/dp_10"
+        android:text="Prohibhited items"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_.5"
+        android:layout_gravity="bottom"
+        android:background="@color/light_gray" />
+</LinearLayout>

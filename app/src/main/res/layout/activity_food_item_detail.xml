@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.CouponDetailsActivity">
+
+
+    <include
+        android:id="@+id/item_tool_lyt"
+        layout="@layout/toolbar_location" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/card_view"
+        android:layout_below="@+id/item_tool_lyt"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_food"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_180"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/food_icon_copy" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Sanfransico Pizza"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16" />
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_restro_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Crispy Canadian bacon, cheese brust, feta cheese beaf, and olive"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/sp_14" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/colorDividerLight" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_add_on"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Add On"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.verkoopapp.fonts.textView.GothicThinTextView
+                    android:id="@+id/tv_item_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:text="Carmelized Onion"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginEnd="@dimen/dp_15" />
+
+
+            </RelativeLayout>
+
+
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/colorDividerLight" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_item_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Mazzarella Cheese"
+                android:textColor="@color/black"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/sp_16" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/colorDividerLight" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_special_instruction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Special Instruction"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16" />
+
+
+            <com.verkoopapp.fonts.editText.GothicThinEditText
+                android:id="@+id/etNote"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@null"
+                android:drawablePadding="@dimen/dp_10"
+                android:gravity="start"
+                android:hint="Add a note (Ex. extra sauce, no ginger etc)"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLength="80"
+                android:maxLines="1"
+                android:minLines="1"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@drawable/cursor_shape"
+                android:textSize="@dimen/sp_14" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_item_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Item Quantity"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15">
+
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16" />
+
+
+            <LinearLayout
+                android:layout_alignParentEnd="true"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+
+                <com.verkoopapp.fonts.textView.GothicThinTextView
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_30"
+                    android:text="-"
+                    android:gravity="center"
+                    android:background="@drawable/background_rect_gray"
+                    android:layout_gravity="center"/>
+
+                <com.verkoopapp.fonts.textView.GothicThinTextView
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_30"
+                    android:text="+"
+                    android:gravity="center"
+                    android:background="@drawable/background_rect_gray"
+                    android:layout_gravity="center"/>
+
+
+
+            </LinearLayout>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/colorDividerLight" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/remove_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Remove item from order"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_16"/>
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:background="@color/colorDividerLight" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_120"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/rectangle_white_shape"
+        android:elevation="@dimen/dp_10"
+        android:gravity="bottom">
+
+        <com.verkoopapp.fonts.textView.GothiBoldTextView
+            android:id="@+id/tv_add_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dp_25"
+            android:layout_marginEnd="@dimen/dp_25"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:background="@drawable/rectangle_red_shape"
+            android:gravity="center"
+            android:padding="@dimen/dp_12"
+            android:text="Add To Order($49.47)"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16" />
+    </RelativeLayout>
+
+</RelativeLayout>

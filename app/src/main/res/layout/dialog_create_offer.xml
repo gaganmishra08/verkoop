@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llParent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:background="@color/white"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_20"
+                android:orientation="horizontal">
+
+                <com.verkoopapp.fonts.textView.GothicThinTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/you_are_offring"
+                    android:layout_weight="2"
+                    android:textColor="@color/light_gray"
+                    android:padding="@dimen/dp_10"
+                    android:textSize="@dimen/sp_18" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tvSymbol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_10"
+                        android:textSize="@dimen/sp_18"
+                        android:textColor="@color/blue"/>
+
+                <com.verkoopapp.fonts.editText.GothiBoldEditText
+                    android:id="@+id/etTotalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:maxLength="10"
+                    android:inputType="numberDecimal"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_10"
+                    android:hint="0.0"
+                    android:imeOptions="actionDone"
+                    android:background="@null"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/sp_18" />
+                </LinearLayout>
+            </LinearLayout>
+
+              <LinearLayout
+                  android:id="@+id/llMakeOffer"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="end"
+                  android:background="@color/blue"
+                 android:orientation="horizontal">
+                 <com.verkoopapp.fonts.textView.GothiBoldTextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:text="@string/make_offer"
+                     android:textSize="@dimen/sp_16"
+                     android:padding="@dimen/dp_10"
+                     android:gravity="center"
+                     android:textColor="@color/white"/>
+
+             </LinearLayout>
+
+        </LinearLayout>
+</LinearLayout>

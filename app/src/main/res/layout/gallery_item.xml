@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:ignore="UselessParent">
+
+        <FrameLayout
+            android:id="@+id/flItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!-- android:background="@drawable/rectangle_border_shape"-->
+            <FrameLayout
+                android:id="@+id/llFrame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/transparent_rect_shape"
+                android:layout_margin="@dimen/dp_4">
+
+                <ImageView
+                    android:id="@+id/ivImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/dp_2"
+                    android:scaleType="fitXY"
+                    android:layout_margin="@dimen/dp_5"
+                    android:src="@mipmap/gallery_place"
+                    android:contentDescription="@string/image" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/llSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:src="@mipmap/gallery_image_selected"
+                    android:contentDescription="@string/image" />
+
+                <com.verkoopapp.fonts.textView.GothicThinTextView
+                    android:id="@+id/tvSelectCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="1"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginRight="@dimen/dp_5"
+                    android:textSize="@dimen/sp_12" />
+            </FrameLayout>
+        </FrameLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/flCamera"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@color/gray_"
+            android:elevation="@dimen/dp_4"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/dp_6">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/dp_4">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/dp_2"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/pic_2"
+                    android:visibility="invisible"
+                    android:contentDescription="@string/image" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_camera_profile_photo"
+                    android:contentDescription="@string/camera" />
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</LinearLayout>

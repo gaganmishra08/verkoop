@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_150"
+    android:background="@drawable/rectangle_grey_shape"
+    android:layout_height="wrap_content"
+    android:id="@+id/llRootParent">
+
+    <LinearLayout
+        android:id="@+id/llParent"
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_150"
+        android:layout_margin="@dimen/dp_6"
+        android:background="@drawable/semi_white_rectangular_shape">
+
+        <LinearLayout
+            android:id="@+id/llSelectionGallery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tvLevelHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:text="Wallets"
+                android:paddingTop="@dimen/dp_40"
+                android:paddingBottom="@dimen/dp_40"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:orientation="horizontal">
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="@color/white"
+                android:elevation="5dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/back_button"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_50"
+                    app:srcCompat="@drawable/ic_arrow_back_black"
+                    android:padding="@dimen/dp_15"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:layout_toRightOf="@+id/back_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Categories"
+                    android:textColor="@color/black"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textSize="@dimen/sp_16">
+
+                </com.verkoopapp.fonts.textView.GothiBoldTextView>
+
+                <com.verkoopapp.fonts.textView.GothicThinTextView
+                    android:id="@+id/tvSkip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    android:padding="@dimen/dp_8"
+                    android:text="@string/skip"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_18"
+                    tools:ignore="RelativeOverlap,RtlHardcoded" />
+
+            </RelativeLayout>
+
+
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.verkoopapp.fonts.textView.GothicThinTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:text="@string/select_any"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_24" />
+
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:text="@string/three_categories"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_24" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/flParent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/llParentCate"
+                    android:layout_height="match_parent">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCategoryList"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:visibility="gone"
+                    android:id="@+id/vpCategories"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivIndicatorFirst"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp_8"
+                        android:src="@mipmap/dot_2"
+                        android:contentDescription="@string/dot" />
+
+                    <ImageView
+                        android:id="@+id/ivIndicatorSecond"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp_8"
+                        android:src="@mipmap/dot_2"
+                        android:contentDescription="@string/dot"/>
+
+                    <ImageView
+                        android:id="@+id/ivIndicatorThird"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp_8"
+                        android:src="@mipmap/dot_2"
+                        android:contentDescription="@string/dot"/>
+                    <ImageView
+                        android:id="@+id/ivIndicatorForth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp_8"
+                        android:src="@mipmap/dot_2"
+                        android:contentDescription="@string/dot"/>
+                    <ImageView
+                        android:id="@+id/ivIndicatorFifth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/dot_2"
+                        android:contentDescription="@string/dot"/>
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_120"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/rectangle_white_shape"
+                android:elevation="@dimen/dp_10">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:orientation="vertical">
+
+                    <com.verkoopapp.fonts.textView.GothicThinTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_20"
+                        android:text="Selected"
+                        android:textColor="@color/gray_light"
+                        android:textSize="@dimen/sp_14" />
+
+                    <com.verkoopapp.fonts.textView.GothiBoldTextView
+                        android:id="@+id/tvSelectionCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:layout_marginStart="@dimen/dp_20"
+                        android:text="0"
+                        android:textColor="@color/black_light"
+                        android:textSize="@dimen/sp_14" />
+                </LinearLayout>
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:id="@+id/tvNext"
+                    android:layout_width="@dimen/dp_200"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rectangle_red_shape"
+                    android:gravity="center"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:padding="@dimen/dp_12"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/done"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16" />
+            </RelativeLayout>
+        </LinearLayout>
+</LinearLayout>

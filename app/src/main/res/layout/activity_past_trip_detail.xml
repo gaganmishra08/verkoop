@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.PastOrderDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimaryDark"
+        android:contentInsetStart="0dp"
+        android:contentInsetLeft="0dp"
+        android:contentInsetEnd="0dp"
+        android:contentInsetRight="0dp"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/dp_8"
+            android:paddingEnd="@dimen/dp_8">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_back"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/dp_6"
+                android:src="@drawable/ic_back_left" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_order"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_toEndOf="@+id/img_back"
+                android:gravity="center_vertical"
+                android:text="@string/order_details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_favourites"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:contentDescription="@string/chat"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dp_10"
+                android:text="@string/help"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_order_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Package Delivered"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_order_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Order: #125688"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_order_status" />
+
+            <View
+                android:id="@+id/view_1"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_order_id" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Cancel Order"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_1" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/txt_order_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/delivery_progress"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_rating" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_arrival_dot"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_18"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/red_circle_without_stroke"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_order_details" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_arrival"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Arrival"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toEndOf="@id/tv_arrival_dot"
+                app:layout_constraintTop_toBottomOf="@+id/txt_order_details" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_arrival_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="221B, Paper Street New York, 10466"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintStart_toStartOf="@+id/tv_arrival"
+                app:layout_constraintTop_toBottomOf="@+id/tv_arrival" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_arrival_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="05:10 PM"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toTopOf="@+id/tv_arrival_address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_arrival" />
+
+
+            <View
+                android:id="@+id/view_2"
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_arrival"
+                app:layout_constraintTop_toBottomOf="@+id/tv_arrival_address" />
+
+
+            <View
+                android:id="@+id/view_arival"
+                android:layout_width="1px"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_24"
+                android:background="@color/colorPrimary"
+                app:layout_constraintBottom_toTopOf="@+id/tv_picking_up"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_arrival" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_pickup_dot"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/red_circle_without_stroke"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_arival" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_picking_up"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/package_picking_up"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toEndOf="@id/tv_arrival_dot"
+                app:layout_constraintTop_toBottomOf="@+id/view_2" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_picking_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="221B, Paper Street New York, 10466"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintStart_toStartOf="@+id/tv_picking_up"
+                app:layout_constraintTop_toBottomOf="@+id/tv_picking_up" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_pickup_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="06:10 PM"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toTopOf="@+id/tv_picking_address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_picking_up" />
+
+
+            <View
+                android:id="@+id/view_3"
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_picking_up"
+                app:layout_constraintTop_toBottomOf="@+id/tv_picking_address" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_deliver_loc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/deliver_to_location"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toEndOf="@id/tv_arrival_dot"
+                app:layout_constraintTop_toBottomOf="@+id/view_3" />
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_deliver_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="08:10 PM"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_3" />
+
+
+            <View
+                android:id="@+id/view_4"
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_picking_up"
+                app:layout_constraintTop_toBottomOf="@+id/tv_deliver_loc" />
+
+
+            <View
+                android:id="@+id/view_package_pic"
+                android:layout_width="1px"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_24"
+                android:background="@color/colorPrimary"
+                app:layout_constraintBottom_toTopOf="@+id/tv_deliver_loc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_picking_up" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_deliver_dot"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/red_circle_without_stroke"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_package_pic" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_dropping_off_pckg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/dropping_off_package"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toEndOf="@id/tv_arrival_dot"
+                app:layout_constraintTop_toBottomOf="@+id/view_4" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_dropping_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="221B, Paper Street New York, 10466"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintStart_toStartOf="@+id/tv_dropping_off_pckg"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dropping_off_pckg" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_dropping_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="11:10 PM"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toTopOf="@+id/tv_dropping_address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dropping_off_pckg" />
+
+
+            <View
+                android:id="@+id/view_5"
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_dropping_off_pckg"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dropping_address" />
+
+
+            <View
+                android:id="@+id/view_dropping"
+                android:layout_width="1px"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_24"
+                android:background="@color/colorPrimary"
+                app:layout_constraintBottom_toTopOf="@+id/tv_dropping_off_pckg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_deliver_loc" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_dropping_dot"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/red_circle_without_stroke"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_dropping" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_driver_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/driver_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_5" />
+
+            <LinearLayout
+                android:id="@+id/llUserProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_driver_detail">
+
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:layout_marginBottom="@dimen/dp_12"
+                    android:background="@drawable/grey_rectangle_shape"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/dp_15"
+                    android:paddingTop="@dimen/dp_15"
+                    android:paddingBottom="@dimen/dp_15">
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/ivPicProfile"
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="@dimen/dp_60"
+                        android:src="@mipmap/pic_placeholder"
+                        app:civ_border_color="#FF000000"
+                        app:civ_border_width="0dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:orientation="vertical">
+
+                        <com.verkoopapp.fonts.textView.GothiBoldTextView
+                            android:id="@+id/tvNameHome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Shank Tyagi"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_16" />
+
+                        <com.verkoopapp.fonts.textView.GothicThinTextView
+                            android:id="@+id/tvPostOn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_8"
+                            android:text="4 min away . 12 Deliveries"
+                            android:textColor="@color/light_gray"
+                            android:textSize="@dimen/sp_14" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:layout_marginEnd="@dimen/dp_10"
+                            android:background="@color/light_gray" />
+
+                        <com.verkoopapp.fonts.textView.GothiBoldTextView
+                            android:id="@+id/tv_car_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:text="Toyta Carmy - HR02PT2413"
+                            android:textColor="@color/light_gray"
+                            android:textSize="@dimen/sp_16" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_15"
+                app:layout_constraintEnd_toStartOf="@+id/expiry_date_lyt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@drawable/grey_rectangle_shape"
+                app:layout_constraintTop_toBottomOf="@+id/llUserProfile">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:padding="@dimen/dp_10"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_phone_blck" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/expiry_date_lyt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/llUserProfile"
+                app:layout_constraintStart_toEndOf="@+id/tv_phone"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/dp_15"
+                android:background="@drawable/grey_rectangle_shape"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:padding="@dimen/dp_10"
+                    android:src="@drawable/ic_chat_black" />
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/gray"
+                    android:layout_height="@dimen/dp_20" />
+
+                <com.verkoopapp.fonts.editText.GothiBoldEditText
+                    android:id="@+id/et_expiry_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawablePadding="@dimen/dp_15"
+                    android:hint="Additional Notes"
+                    android:layout_gravity="center_vertical"
+                    android:imeOptions="actionNext"
+                    android:textCursorDrawable="@drawable/cursor_shape"
+                    android:inputType="text"
+                    android:maxLength="20"
+                    android:maxLines="1"
+                    android:minLines="1"
+                    android:textSize="@dimen/sp_14"
+                    android:padding="@dimen/dp_8"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_bill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Your Cost"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_phone" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_subtotal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Subtotal"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toStartOf="@+id/tv_subtotal_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_bill" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_subtotal_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="$157.89"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_bill" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_delivery_fee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Delivery Fee"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toStartOf="@+id/tv_subtotal_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_subtotal" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_fee_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="$4.00"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_subtotal" />
+
+
+            <View
+                android:id="@+id/view_7"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_delivery_fee" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_total"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/total"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toStartOf="@+id/tv_subtotal_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_7" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_total_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="$161.89"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_7" />
+
+
+            <View
+                android:id="@+id/view_8"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_total" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_payment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/payment"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_8" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_payment_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/cash"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toStartOf="@+id/tv_subtotal_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_payment" />
+
+
+            <View
+                android:id="@+id/view_9"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_payment_type" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+</LinearLayout>

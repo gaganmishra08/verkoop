@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_120"
+    android:background="@drawable/profile_bg"
+    android:contentInsetEnd="0dp"
+    android:contentInsetLeft="0dp"
+    android:contentInsetRight="0dp"
+    android:contentInsetStart="0dp"
+    android:minHeight="?attr/actionBarSize"
+    app:contentInsetEnd="0dp"
+    app:contentInsetLeft="0dp"
+    app:contentInsetRight="0dp"
+    app:contentInsetStart="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:paddingEnd="@dimen/dp_8"
+            android:paddingStart="@dimen/dp_8">
+
+            <ImageView
+                android:id="@+id/iv_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/dp_10"
+                android:src="@drawable/ic_arrow_back_white" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:paddingStart="@dimen/dp_10"
+                android:gravity="center_vertical"
+                android:text="Search"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_18"/>
+
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/ivFilter"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/chat"
+                android:padding="@dimen/dp_5"
+                android:src="@drawable/ic_filter_white" />
+
+            <ImageView
+                android:id="@+id/ivChat"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/chat"
+                android:padding="@dimen/dp_5"
+                android:src="@drawable/ic_chats_white" />
+
+
+
+
+
+        </LinearLayout>
+
+        <com.verkoopapp.fonts.editText.GothiBoldEditText
+            android:id="@+id/etSearchFull"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="@dimen/dp_10"
+            android:paddingEnd="@dimen/dp_20"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginEnd="@dimen/dp_15"
+            android:gravity="center_vertical"
+            android:textColor="@color/dark_black"
+            android:drawableLeft="@drawable/ic_search"
+            android:maxLines="1"
+            android:drawablePadding="@dimen/dp_10"
+            android:padding="@dimen/dp_10"
+            android:minLines="1"
+            android:inputType="text"
+            android:hint="@string/search"
+            android:imeOptions="actionSearch"
+            android:background="@drawable/white_rect_shape"
+            android:textSize="@dimen/dp_14"/>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/ivFavourite"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/dp_5"
+            android:contentDescription="@string/favourite"
+            android:padding="@dimen/dp_10"
+            android:src="@mipmap/favourites" />
+
+    </LinearLayout>
+</androidx.appcompat.widget.Toolbar>

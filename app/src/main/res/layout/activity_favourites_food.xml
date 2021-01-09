@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/tool_lyt"
+        layout="@layout/toolbar_location" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFavouriteFoodList"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/dp_15"
+            android:clipToPadding="false"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:id="@+id/pbProgressFav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <com.verkoopapp.fonts.textView.GothiBoldTextView
+            android:id="@+id/tvMssgData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/no_result_found"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/sp_14"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>

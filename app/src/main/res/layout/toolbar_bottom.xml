@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tbBottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:baselineAligned="false"
+    android:elevation="@dimen/dp_8"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.verkoopapp.fonts.editText.GothiBoldEditText
+            android:id="@+id/etMssg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="top|left"
+            android:hint="@string/enter_here"
+            android:imeOptions="actionDone"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:maxLines="4"
+            android:minLines="1"
+            android:paddingBottom="@dimen/dp_15"
+            android:paddingStart="@dimen/dp_15"
+            android:paddingTop="@dimen/dp_15"
+            android:textColor="@color/black_dark"
+            android:textSize="@dimen/sp_16"
+            tools:ignore="NestedWeights,RtlSymmetry" />
+
+        <ImageView
+            android:id="@+id/ivUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:contentDescription="@string/next"
+            android:padding="@dimen/dp_10"
+            android:src="@mipmap/attachment" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_5">
+
+        <ImageView
+            android:id="@+id/ivSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_2"
+            android:contentDescription="@string/next"
+            android:padding="@dimen/dp_10"
+            android:src="@mipmap/send_icon" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,22 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ivPagerItem"
+        android:layout_marginLeft="@dimen/dp_50"
+        android:layout_marginRight="@dimen/dp_50"
+        android:adjustViewBounds="true" />
+
+    <com.verkoopapp.fonts.textView.GothiBoldTextView
+        android:id="@+id/tvPagerItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dp_24"
+        android:layout_gravity="bottom|center">
+
+    </com.verkoopapp.fonts.textView.GothiBoldTextView>
+</FrameLayout>

@@ -1,0 +1,137 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/background"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_location" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_30"
+                android:layout_marginStart="@dimen/dp_30"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_40"
+                    android:contentDescription="@string/image"
+                    android:src="@mipmap/logo_fp" />
+
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_50"
+                    android:text="@string/phone_number__"
+                    android:textColor="@color/light_gray"
+                    android:textSize="@dimen/sp_24" />
+
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:gravity="center"
+                    android:text="@string/verify_your_new_number_to_make_your_profile_more_trustworthy_to_other_verkoopions"
+                    android:textColor="@color/dark_black"
+                    android:textSize="@dimen/sp_14" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_40"
+                    android:orientation="horizontal">
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/ccpPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:gravity="start"
+                        app:ccpDialog_allowSearch="true"
+                        app:ccpDialog_keyboardAutoPopup="false"
+                        app:ccpDialog_showPhoneCode="false"
+                        app:ccp_contentColor="@color/text_color"
+                        app:ccp_countryPreference="US,DE,IN"
+                        app:ccp_showArrow="false"
+                        app:ccp_showFlag="false"
+                        app:ccp_showFullName="false"
+                        app:ccp_showNameCode="false"
+                        app:ccp_showPhoneCode="true"
+                        app:ccp_textGravity="LEFT" />
+
+                    <com.verkoopapp.fonts.editText.GothiBoldEditText
+                        android:id="@+id/etPhoneNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:drawablePadding="@dimen/dp_10"
+                        android:hint="@string/phone_number_"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:padding="@dimen/dp_8"
+                        android:textColor="@color/text_color"
+                        android:textCursorDrawable="@drawable/cursor_shape" />
+                </LinearLayout>
+
+
+                <View
+                    android:id="@+id/vPhoneFor"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="@color/light_gray" />
+
+                <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/dp_50"
+                    android:layout_marginTop="@dimen/dp_20"
+                    card_view:cardCornerRadius="24dp"
+                    card_view:cardElevation="@dimen/dp_5">
+
+                    <com.verkoopapp.fonts.textView.GothiBoldTextView
+                        android:id="@+id/tvGetCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center"
+                        android:padding="@dimen/dp_10"
+                        android:text="@string/get_confirmation_code"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_16" />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/pbProgressPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>

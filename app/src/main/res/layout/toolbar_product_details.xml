@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_80"
+    android:background="@color/white"
+    android:elevation="@dimen/dp_8"
+    android:minHeight="?attr/actionBarSize"
+    app:contentInsetStart="0dp"
+    app:contentInsetStartWithNavigation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <ImageView
+                android:id="@+id/ivLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/dp_10"
+                android:src="@drawable/ic_arrow_back_black"
+                android:visibility="visible"
+                android:contentDescription="@string/back" />
+            <LinearLayout
+                android:id="@+id/llChatDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginEnd="@dimen/dp_8"
+               android:paddingStart="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                tools:ignore="RtlSymmetry">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivProfileTool"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:src="@mipmap/pic_placeholder"
+                    app:civ_border_color="@color/transparent"
+                    app:civ_border_width="2dp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:orientation="vertical">
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_12"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:layout_marginEnd="@dimen/dp_3"
+                    tools:ignore="NestedWeights" />
+                    <com.verkoopapp.fonts.textView.GothicThinTextView
+                        android:id="@+id/tvDateTool"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black_35"
+                        android:textSize="@dimen/sp_10"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:layout_marginEnd="@dimen/dp_3"
+                        tools:ignore="NestedWeights" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivRightProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/dp_10"
+                android:src="@drawable/menu_icon_black"
+                android:visibility="visible"
+                android:contentDescription="@string/chat" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.Toolbar>
+

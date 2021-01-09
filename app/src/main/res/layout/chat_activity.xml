@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_back"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_product_details" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llParentChat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp_10">
+
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:id="@+id/roundRectView2"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_55"
+                android:layout_gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:shape_roundRect_bottomLeftRadius="@dimen/dp_6"
+                app:shape_roundRect_bottomRightRadius="@dimen/dp_6"
+                app:shape_roundRect_topLeftRadius="@dimen/dp_6"
+                app:shape_roundRect_topRightRadius="@dimen/dp_6">
+
+                <ImageView
+                    android:id="@+id/ivProductImageHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/image"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/post_placeholder" />
+
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:id="@+id/tvSoldFav"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/trans_red"
+                    android:padding="@dimen/dp_6"
+                    android:paddingStart="@dimen/dp_10"
+                    android:text="@string/sold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14"
+                    android:visibility="gone"
+                    tools:ignore="RtlSymmetry" />
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/dp_8"
+                android:orientation="vertical">
+
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:id="@+id/tvProductDes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/dark_black"
+                    android:textSize="@dimen/sp_16" />
+
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:id="@+id/tvProducePrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_4"
+
+                    android:textColor="@color/text_gray__"
+                    android:textSize="@dimen/sp_16" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_.5"
+            android:background="@color/light_gray_chat" />
+
+        <LinearLayout
+            android:id="@+id/llViewOffer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tvViewProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="@string/view_seller"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/sp_14" />
+
+            <View
+                android:layout_width="@dimen/dp_.5"
+                android:layout_height="match_parent"
+                android:background="@color/light_gray_chat" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tvMakeOffer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="@string/make_offer"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/light_gray_chat" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvChatList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:id="@+id/pbProgressChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_.5"
+        android:background="@color/light_gray_view" />
+
+    <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rvChatSuggestion"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+    <include layout="@layout/toolbar_bottom" />
+
+</LinearLayout>

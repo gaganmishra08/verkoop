@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.verkoopapp.fonts.textView.GothicThinTextView
+        android:id="@+id/tvSubCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/text_gray"
+        android:padding="@dimen/dp_4"
+        android:drawablePadding="@dimen/dp_10"
+        android:layout_gravity="center" />
+</LinearLayout>

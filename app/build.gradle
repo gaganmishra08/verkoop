@@ -1,0 +1,183 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+ext {
+    wirecardEcomLibraryVersion = "3.4.0"
+}
+
+android {
+//    signingConfigs {
+//        release {
+//            storeFile file('E:\\verkoop_app\\verkoop_app\\verkoop_app\\verkoop_new.jks')
+//            storePassword '123456'
+//            keyAlias = 'upload'
+//            keyPassword '123456'
+//        }
+//    }
+
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "com.verkoopapp"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 15
+        versionName "2.3"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false   //add this
+            shrinkResources false
+//            -keep class com.clickzin.** { *; }
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    kapt { generateStubs = true }
+    kapt {
+        correctErrorTypes = true
+    }
+}
+
+repositories {
+    maven {
+        url "https://dl.bintray.com/wirecard/ecom-android"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.github.scottyab:showhidepasswordedittext:0.8'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.andrognito.flashbar:flashbar:1.0.3'
+    implementation 'com.hbb20:ccp:2.2.3'
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+    implementation 'com.google.firebase:firebase-core:17.4.4'
+    implementation 'com.google.firebase:firebase-messaging:20.2.4'
+    implementation 'com.google.android.gms:play-services-vision:20.1.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
+    implementation 'com.google.android.gms:play-services-wallet:18.0.0'
+    implementation 'com.github.florent37:shapeofview:1.3.2'
+    implementation 'com.tuyenmonkey:mkloader:1.4.0'
+    implementation 'com.github.stfalcon:bottomtablayout:0.3'
+    implementation 'com.daimajia.slider:library:1.1.5@aar'
+    implementation 'com.squareup.picasso:picasso:2.3.2'
+    implementation 'com.google.dagger:dagger:2.2'
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.3.72"
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.zhihu.android:matisse:0.4.3'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.github.florent37:expansionpanel:1.1.1'
+    implementation 'com.github.florent37:viewanimator:1.1.0'
+    implementation 'ch.acra:acra:4.8.5'
+    implementation 'com.nightonke:jellytogglebutton:1.0.2'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.0'
+    implementation 'com.github.claudiodegio:MsvSearch:1.0.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.github.skydoves:powermenu:2.0.5'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+//    implementation 'com.github.nkzawa:socket.io-client:0.3.0'
+    implementation ('io.socket:socket.io-client:1.0.0') {
+        // excluding org.json which is provided by Android
+        exclude group: 'org.json', module: 'json'
+    }
+
+    implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
+    implementation 'org.apache.commons:commons-lang3:3.4'
+    implementation 'org.jetbrains:annotations:16.0.2'
+    implementation 'com.github.blikoon:QRCodeScanner:0.1.2'
+    implementation 'com.github.blikoon:QRCodeScanner:0.1.2'
+    implementation 'com.github.nisrulz:qreader:2.1.2'
+    implementation 'com.edwardvanraak:MaterialBarcodeScanner:0.0.6-ALPHA'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'io.branch.sdk.android:library:3.2.0'
+    implementation 'com.facebook.android:facebook-share:5.0.3'
+    implementation 'com.google.firebase:firebase-analytics:17.4.4'
+    implementation 'com.github.manojbhadane:PaymentCardView:v1.3'
+
+    // Add the Firebase Crashlytics SDK.
+    implementation 'com.google.firebase:firebase-crashlytics:17.1.1'
+    implementation 'com.github.wirecard:paymentSDK-Android:2.7.1-cardScannerDisabled'
+    implementation 'com.stripe:stripe-android:10.4.2'
+
+    implementation 'com.clickzin.tracking:clickzinTracking:3.0.3' //clickzin
+    implementation 'com.android.installreferrer:installreferrer:1.0' //clickzin
+    implementation 'com.google.code.gson:gson:2.8.2'  //  clickzin
+
+    implementation "com.wirecard.ecom:card:3.4.0"
+    implementation "com.wirecard.ecom:sepa:$wirecardEcomLibraryVersion"
+    implementation "com.wirecard.ecom:zapp:$wirecardEcomLibraryVersion"
+    implementation "com.wirecard.ecom:paypal:$wirecardEcomLibraryVersion"
+    implementation "com.wirecard.ecom:google-pay:$wirecardEcomLibraryVersion"
+    implementation 'com.zapp.library:merchant:1.1.0'
+    implementation 'com.google.api-client:google-api-client-android:1.22.0'
+    implementation 'com.google.apis:google-api-services-vision:v1-rev357-1.22.0'
+    implementation 'com.google.code.findbugs:jsr305:2.0.1'
+    implementation 'id.zelory:compressor:2.1.0'
+    implementation 'com.github.corouteam:GlideToVectorYou:v2.0.0'
+    implementation('com.squareup.retrofit2:converter-simplexml:2.3.0') {
+        exclude module: 'stax'
+        exclude module: 'stax-api'
+        exclude module: 'xpp3'
+    }
+    implementation('com.crashlytics.sdk.android:crashlytics:2.10.1@aar') {
+        transitive = true
+    }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72"
+    }
+}
+repositories {
+    mavenCentral()
+}
+configurations.all {
+    resolutionStrategy.eachDependency {
+        DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion '28.0.0'
+                }
+            }
+    }
+
+}
+
+androidExtensions {
+    experimental = true
+}

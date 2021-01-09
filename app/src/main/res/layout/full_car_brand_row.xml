@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_marginTop="@dimen/dp_1"
+    android:id="@+id/llRootParent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:id="@+id/llSelectionGallery"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivItemsBrand"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/image" />
+
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:id="@+id/tvLevelBrand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:text="Women's"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp_12" />
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llSideDividerHome"
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="@color/gray_back"
+            android:orientation="horizontal" />
+    </FrameLayout>
+
+</FrameLayout>

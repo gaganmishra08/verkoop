@@ -1,0 +1,358 @@
+{
+	"country": [{
+		"id": 1,
+		"name": "South Africa",
+		"states": [
+			{
+				"id": 1,
+				"name": "Eastern Cape",
+				"cities": [
+					{
+						"id": 1,
+						"name": "Alice"
+					},
+					{
+						"id": 2,
+						"name": "Butterworth"
+					},
+					{
+						"id": 3,
+						"name": "East London"
+					},
+					{
+						"id": 4,
+						"name": "Graaff-Reinet"
+					},
+					{
+						"id": 5,
+						"name": "Grahamstown"
+					},
+					{
+						"id": 6,
+						"name": "King William’s Town"
+					},
+					{
+						"id": 7,
+						"name": "Mthatha"
+					},
+					{
+						"id": 8,
+						"name": "Port Elizabeth"
+					},
+					{
+						"id": 9,
+						"name": "Queenstown"
+					},
+					{
+						"id": 10,
+						"name": "Uitenhage"
+					},
+					{
+						"id": 11,
+						"name": "Zwelitsha"
+					}
+				]
+			},
+			{
+				"id": 2,
+				"name": "Free State",
+				"cities": [
+					{
+						"id": 1,
+						"name": "Bethlehem"
+					},
+					{
+						"id": 2,
+						"name": "Bloemfontein"
+					},
+					{
+						"id": 3,
+						"name": "Jagersfontein"
+					},
+					{
+						"id": 4,
+						"name": "Kroonstad"
+					},
+					{
+						"id": 5,
+						"name": "Odendaalsrus"
+					},
+					{
+						"id": 6,
+						"name": "Parys"
+					},
+					{
+						"id": 7,
+						"name": "Phuthaditjhaba"
+					},
+					{
+						"id": 8,
+						"name": "Sasolburg"
+					},
+					{
+						"id": 9,
+						"name": "Virginia"
+					},
+					{
+						"id": 10,
+						"name": "Welkom"
+					}
+				]
+			},
+			{
+				"id": 3,
+				"name": "Gauteng",
+				"cities": [
+					{
+						"id": 1,
+						"name": "Benoni"
+					},
+					{
+						"id": 2,
+						"name": "Boksburg"
+					},
+					{
+						"id": 3,
+						"name": "Brakpan"
+					},
+					{
+						"id": 4,
+						"name": "Carletonville"
+					},
+					{
+						"id": 5,
+						"name": "Germiston"
+					},
+					{
+						"id": 6,
+						"name": "Johannesburg"
+					},
+					{
+						"id": 7,
+						"name": "Krugersdorp"
+					},
+					{
+						"id": 8,
+						"name": "Pretoria"
+					},
+					{
+						"id": 9,
+						"name": "Randburg"
+					},
+					{
+						"id": 10,
+						"name": "Randfontein"
+					},
+					{
+						"id": 11,
+						"name": "Roodepoort"
+					},
+					{
+						"id": 12,
+						"name": "Soweto"
+					},
+					{
+						"id": 13,
+						"name": "Springs"
+					},
+					{
+						"id": 14,
+						"name": "Vanderbijlpark"
+					},
+					{
+						"id": 15,
+						"name": "Vereeniging"
+					}
+				]
+			},
+			{
+				"id": 4,
+				"name": "KwaZulu-Natal",
+				"cities": [
+					{
+						"id": 1,
+						"name": "Durban"
+					},
+					{
+						"id": 2,
+						"name": "Empangeni"
+					},
+					{
+						"id": 3,
+						"name": "Ladysmith"
+					},
+					{
+						"id": 4,
+						"name": "Newcastle"
+					},
+					{
+						"id": 5,
+						"name": "Pietermaritzburg"
+					},
+					{
+						"id": 6,
+						"name": "Pinetown"
+					},
+					{
+						"id": 7,
+						"name": "Ulundi"
+					},
+					{
+						"id": 8,
+						"name": "Umlazi"
+					}
+				]
+			},
+			{
+				"id": 5,
+				"name": "Limpopo",
+				"cities": [
+					{
+						"id": 1,
+						"name": "Giyani"
+					},
+					{
+						"id": 2,
+						"name": "Lebowakgomo"
+					},
+					{
+						"id": 3,
+						"name": "Musina"
+					},
+					{
+						"id": 4,
+						"name": "Phalaborwa"
+					},
+					{
+						"id": 5,
+						"name": "Polokwane"
+					},
+					{
+						"id": 6,
+						"name": "Seshego"
+					},
+					{
+						"id": 7,
+						"name": "Sibasa"
+					},
+					{
+						"id": 8,
+						"name": "Thabazimbi"
+					}
+				]
+			},
+			{
+				"id": 6,
+				"name": "Mpumalanga",
+				"cities": [
+					{
+						"id": 1,
+						"name": "Emalahleni"
+					},
+					{
+						"id": 2,
+						"name": "Nelspruit"
+					},
+					{
+						"id": 3,
+						"name": "Secunda"
+					}
+				]
+			},
+			{
+				"id": 7,
+				"name": "North West",
+				"cities": [
+					{
+						"id": 1,
+						"name": "Klerksdorp"
+					},
+					{
+						"id": 2,
+						"name": "Mahikeng"
+					},
+					{
+						"id": 3,
+						"name": "Mmabatho"
+					},
+					{
+						"id": 4,
+						"name": "Potchefstroom"
+					},
+					{
+						"id": 5,
+						"name": "Rustenburg"
+					}
+				]
+			},
+			{
+				"id": 8,
+				"name": "Northern Cape",
+				"cities": [
+					{
+						"id": 1,
+						"name": "Kimberley"
+					},
+					{
+						"id": 2,
+						"name": "Kuruman"
+					},
+					{
+						"id": 3,
+						"name": "Port Nolloth"
+					}
+				]
+			},
+			{
+				"id": 9,
+				"name": "Western Cape",
+				"cities": [
+					{
+						"id": 1,
+						"name": "Bellville"
+					},
+					{
+						"id": 2,
+						"name": "Cape Town"
+					},
+					{
+						"id": 3,
+						"name": "Constantia"
+					},
+					{
+						"id": 4,
+						"name": "George"
+					},
+					{
+						"id": 5,
+						"name": "Hopefield"
+					},
+					{
+						"id": 6,
+						"name": "Oudtshoorn"
+					},
+					{
+						"id": 7,
+						"name": "Paarl"
+					},
+					{
+						"id": 8,
+						"name": "Simon’s Town"
+					},
+					{
+						"id": 9,
+						"name": "Stellenbosch"
+					},
+					{
+						"id": 10,
+						"name": "Swellendam"
+					},
+					{
+						"id": 11,
+						"name": "Worcester"
+					}
+				]
+			}
+		]
+	}]
+}

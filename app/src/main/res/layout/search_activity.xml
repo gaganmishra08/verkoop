@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+   <include layout="@layout/toolbar_search_user" />
+
+    <LinearLayout
+        android:id="@+id/ll_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/dp_5"
+        tools:ignore="RtlSymmetry">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="@string/image" />
+
+        <com.verkoopapp.fonts.textView.GothicThinTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dp_10"
+            android:text="@string/search_user_instead"
+            android:textSize="@dimen/sp_18"
+            android:textColor="@color/dark_black" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_.5"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_10"
+        android:background="@color/light_gray" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearchList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+        <ProgressBar
+            android:id="@+id/pbProgressSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+        <com.verkoopapp.fonts.textView.GothicThinTextView
+            android:id="@+id/tvDemoText"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/light_gray"
+            android:text="@string/no_result_found"
+            />
+    </FrameLayout>
+</LinearLayout>

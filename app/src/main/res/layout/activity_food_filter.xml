@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activity.CouponDetailsActivity">
+
+
+    <include
+        android:id="@+id/filter_tool_lyt"
+        layout="@layout/toolbar_location" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/card_view"
+        android:layout_below="@+id/filter_tool_lyt"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_30"
+                android:text="@string/sort"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_picked"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/picked_for_you_default"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_sort" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:checked="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_sort" />
+
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/tv_picked" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_most_popular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/most_popular"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/tv_most_popular" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_rating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/ratings"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/tv_rating" />
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_delivery_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/delivery_time"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+
+            <View
+                android:id="@+id/view7"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/tv_delivery_time" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_near_you"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/near_you"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view7" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view7" />
+
+
+            <View
+                android:id="@+id/view8"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/tv_near_you" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/price_range"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view8" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_price_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/grey_rectangle_shape"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_8"
+                android:text="$"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toStartOf="@+id/tv_price_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_price_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/rectangle_red_stroke"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_8"
+                android:text="$$"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toStartOf="@+id/tv_price_3"
+                app:layout_constraintStart_toEndOf="@+id/tv_price_1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_price_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/grey_rectangle_shape"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_8"
+                android:text="$$"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toStartOf="@+id/tv_price_4"
+                app:layout_constraintStart_toEndOf="@+id/tv_price_2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_price_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@drawable/grey_rectangle_shape"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_8"
+                android:paddingBottom="@dimen/dp_8"
+                android:text="$$$$"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_price_3"
+                app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_delivery_fee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/delivery_fee"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_price_4" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_free"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/free"
+                android:textColor="@color/black"
+
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toStartOf="@+id/tv_fee_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_delivery_fee" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_fee_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:gravity="center"
+                android:text="$3"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toStartOf="@+id/tv_fee_2"
+                app:layout_constraintStart_toEndOf="@id/tv_free"
+                app:layout_constraintTop_toBottomOf="@+id/tv_delivery_fee" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_fee_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:gravity="center"
+                android:text="$5"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toStartOf="@+id/tv_fee_3"
+                app:layout_constraintStart_toEndOf="@id/tv_fee_1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_delivery_fee" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_fee_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:gravity="center"
+                android:text="$7"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toStartOf="@+id/tv_fee_4"
+                app:layout_constraintStart_toEndOf="@id/tv_fee_2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_delivery_fee" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_fee_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:gravity="center"
+                android:text="$10+"
+                android:textAlignment="gravity"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_fee_3"
+                app:layout_constraintTop_toBottomOf="@+id/tv_delivery_fee" />
+
+
+            <RadioButton
+                android:id="@+id/iv_free"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:gravity="center"
+                android:checked="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_free" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/view_fee_1"
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/dp_30"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@+id/iv_fee_1"
+                app:layout_constraintStart_toEndOf="@+id/iv_free"
+                app:layout_constraintTop_toBottomOf="@+id/tv_free" />
+
+            <RadioButton
+                android:id="@+id/iv_fee_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                app:layout_constraintStart_toStartOf="@id/tv_fee_1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_fee_1" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/view_fee_2"
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/dp_30"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@+id/iv_fee_2"
+                app:layout_constraintStart_toEndOf="@+id/iv_fee_1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_fee_1" />
+
+            <RadioButton
+                android:id="@+id/iv_fee_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                app:layout_constraintStart_toStartOf="@id/tv_fee_2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_fee_2" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/view_fee_3"
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/dp_30"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@+id/iv_fee_3"
+                app:layout_constraintStart_toEndOf="@+id/iv_fee_2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_fee_2" />
+
+            <RadioButton
+                android:id="@+id/iv_fee_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                app:layout_constraintStart_toStartOf="@id/tv_fee_3"
+                app:layout_constraintTop_toBottomOf="@+id/tv_fee_3" />
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/view_fee_4"
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/dp_30"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                app:layout_constraintEnd_toStartOf="@+id/iv_fee_4"
+                app:layout_constraintStart_toEndOf="@+id/iv_fee_3"
+                app:layout_constraintTop_toBottomOf="@+id/tv_fee_3" />
+
+            <RadioButton
+                android:id="@+id/iv_fee_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                app:layout_constraintStart_toStartOf="@id/tv_fee_4"
+                app:layout_constraintTop_toBottomOf="@+id/tv_fee_4" />
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_dietry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_30"
+                android:text="@string/dietry"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_free" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_vegtrain"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Vegetrain"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dietry" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:checked="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dietry" />
+
+
+            <View
+                android:id="@+id/view10"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/tv_vegtrain" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_non_vegetrain"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/non_vegetrain"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view10" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view10" />
+
+
+            <View
+                android:id="@+id/view11"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/tv_non_vegetrain" />
+
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_gluten"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="Gluten Free"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+
+            <View
+                android:id="@+id/view12"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/gray"
+                app:layout_constraintTop_toBottomOf="@id/tv_gluten" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_120"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/rectangle_white_shape"
+        android:elevation="@dimen/dp_10">
+
+        <com.verkoopapp.fonts.textView.GothiBoldTextView
+            android:id="@+id/tv_apply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dp_25"
+            android:layout_marginEnd="@dimen/dp_25"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:background="@drawable/rectangle_red_shape"
+            android:gravity="center"
+            android:padding="@dimen/dp_12"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16" />
+    </RelativeLayout>
+</RelativeLayout>

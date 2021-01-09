@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="country_arrays">
+        <item>Select One</item>
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+</resources>

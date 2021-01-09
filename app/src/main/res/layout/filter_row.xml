@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_4"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/white_rectangular_shape"
+        android:orientation="horizontal">
+    <com.verkoopapp.fonts.textView.GothicThinTextView
+        android:id="@+id/tvFilterType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price : High to low"
+        android:textColor="@color/text_gray"
+        android:layout_gravity="center"
+        android:padding="@dimen/dp_6"
+        android:textSize="@dimen/sp_12"
+       />
+
+        <ImageView
+            android:id="@+id/ivRemove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_5"
+            android:src="@mipmap/tag_close"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/llBuyCar"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_18"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_10">
+
+        <com.verkoopapp.fonts.textView.GothiBoldTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="@string/brands"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_20" />
+
+        <com.verkoopapp.fonts.textView.GothiBoldTextView
+            android:id="@+id/tvViewAllBrands"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/view_all"
+            android:drawableEnd="@drawable/ic_arrow_drop_down"
+            android:textColor="#696969"
+            android:drawablePadding="@dimen/dp_10"
+            android:textSize="@dimen/sp_14" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBrands"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

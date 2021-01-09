@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/dp_6"
+        android:layout_marginEnd="@dimen/dp_6"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginBottom="@dimen/dp_5"
+        app:cardElevation="@dimen/dp_4"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/dp_8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_8"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_10"
+                android:layout_gravity="center"
+                android:src="@mipmap/wallet_g" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:id="@+id/tvTypeHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_18"
+                    android:textColor="@color/dark_black"
+                    android:text="@string/added_to_verkoop"/>
+
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:id="@+id/tvData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/light_gray" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:id="@+id/tvPriceWallet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:textColor="@color/accept_offer"
+                    android:textSize="@dimen/sp_18"/>
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/success"
+                    android:visibility="gone"
+                    android:textColor="@color/accept_offer"
+                    android:textSize="@dimen/sp_14"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

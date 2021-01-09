@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:paddingTop="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_8">
+
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:id="@+id/roundRectView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:shape_roundRect_bottomLeftRadius="@dimen/dp_6"
+                app:shape_roundRect_bottomRightRadius="@dimen/dp_6"
+                app:shape_roundRect_topLeftRadius="@dimen/dp_6"
+                app:shape_roundRect_topRightRadius="@dimen/dp_6">
+
+                <ImageView
+                    android:id="@+id/ivProductImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/post_placeholder"
+                    android:contentDescription="@string/image" />
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:id="@+id/tvSold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_14"
+                    android:padding="@dimen/dp_6"
+                    android:paddingStart="@dimen/dp_10"
+                    android:textColor="@color/white"
+                    android:background="@color/trans_red"
+                    android:visibility="gone"
+                    android:text="@string/sold"/>
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tvNameProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginStart="@dimen/dp_6"
+                android:layout_marginTop="@dimen/dp_8"
+                android:textSize="@dimen/sp_12" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_6"
+                android:orientation="horizontal">
+
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Condition : "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_12" />
+
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:id="@+id/tvConditionProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="new"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_12" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingStart="@dimen/dp_8"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_10"
+                    android:orientation="horizontal">
+
+                    <com.verkoopapp.fonts.textView.GothicThinTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Price : "
+                        android:textColor="@color/light_gray"
+                        android:textSize="@dimen/sp_12" />
+
+                    <com.verkoopapp.fonts.textView.GothiBoldTextView
+                        android:id="@+id/tvItemPriceProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:id="@+id/tvLikesProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_14"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    android:padding="@dimen/dp_10"
+                    android:drawableStart="@mipmap/post_like"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimary"
+                    android:drawablePadding="@dimen/sp_8"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llSideDividerProfile"
+            android:layout_width="@dimen/dp_.5"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:orientation="horizontal"
+            android:background="@color/light_gray"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_.5"
+            android:layout_gravity="bottom"
+            android:background="@color/light_gray"/>
+    </FrameLayout>
+
+</LinearLayout>

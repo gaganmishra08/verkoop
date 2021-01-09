@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_80"
+    android:background="@drawable/profile_bg"
+    android:contentInsetEnd="0dp"
+    android:contentInsetLeft="0dp"
+    android:contentInsetRight="0dp"
+    android:contentInsetStart="0dp"
+    android:minHeight="?attr/actionBarSize"
+    app:contentInsetEnd="0dp"
+    app:contentInsetLeft="0dp"
+    app:contentInsetRight="0dp"
+    app:contentInsetStart="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/dp_8"
+        android:paddingStart="@dimen/dp_8">
+
+        <ImageView
+            android:id="@+id/iv_leftGallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/ic_arrow_back_white"
+            android:contentDescription="@string/filter" />
+
+        <com.verkoopapp.fonts.textView.GothiBoldTextView
+            android:id="@+id/tvHeaderGallery"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:paddingStart="@dimen/dp_10"
+            android:gravity="center_vertical"
+            android:text="@string/filter"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18"
+            tools:ignore="RtlSymmetry" />
+
+
+        <com.verkoopapp.fonts.textView.GothicThinTextView
+            android:id="@+id/tvChatGallery"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:contentDescription="@string/chat"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:paddingStart="@dimen/dp_10"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            android:text="@string/reset"
+            tools:ignore="RtlSymmetry" />
+    </LinearLayout>
+</androidx.appcompat.widget.Toolbar>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_80"
+    android:background="@drawable/profile_bg"
+    android:contentInsetEnd="0dp"
+    android:contentInsetLeft="0dp"
+    android:contentInsetRight="0dp"
+    android:contentInsetStart="0dp"
+    android:elevation="@dimen/dp_8"
+    android:minHeight="?attr/actionBarSize"
+    app:contentInsetEnd="0dp"
+    app:contentInsetLeft="0dp"
+    app:contentInsetRight="0dp"
+    app:contentInsetStart="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/dp_8"
+        android:paddingStart="@dimen/dp_8">
+
+        <ImageView
+            android:id="@+id/iv_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/ic_arrow_back_white"
+            android:contentDescription="@string/back" />
+
+        <com.verkoopapp.fonts.textView.GothiBoldTextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:paddingStart="@dimen/dp_10"
+            android:gravity="center_vertical"
+            android:text="@string/add_details"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18"
+            tools:ignore="RtlSymmetry" />
+
+        <ImageView
+            android:id="@+id/ivFavourite"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/dp_5"
+            android:contentDescription="@string/favourite"
+            android:visibility="gone"
+            android:padding="@dimen/dp_10"
+            android:src="@mipmap/favourites" />
+
+        <ImageView
+            android:id="@+id/ivChat"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:contentDescription="@string/chat"
+            android:padding="@dimen/dp_10"
+            android:visibility="invisible"
+            android:src="@mipmap/chat" />
+    </LinearLayout>
+</androidx.appcompat.widget.Toolbar>

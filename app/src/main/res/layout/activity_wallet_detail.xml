@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.CouponDetailsActivity">
+
+
+    <include
+        android:id="@+id/wallet_tool_lyt"
+        layout="@layout/toolbar_location" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:id="@+id/tv_discount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/pay_your_orders_with_wallet"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tv_restro_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:text="@string/use_your_wallet"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_discount" />
+
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/colorDividerLight"
+                app:layout_constraintTop_toBottomOf="@id/tv_restro_name" />
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_120"
+                app:cardCornerRadius="@dimen/dp_15"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:paddingTop="@dimen/dp_40"
+                android:paddingBottom="@dimen/dp_40"
+                android:paddingStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_30"
+                android:paddingEnd="@dimen/dp_10"
+                app:cardBackgroundColor="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/dp_5"
+                    android:background="@drawable/profile_bg"
+                    android:gravity="center_vertical">
+
+
+                    <com.verkoopapp.fonts.textView.GothicThinTextView
+                        android:id="@+id/tv_wallet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:text="@string/wallet_balance"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_16" />
+
+
+
+                    <com.verkoopapp.fonts.textView.GothiBoldTextView
+                        android:id="@+id/tv_total_wallet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_15"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_below="@+id/tv_wallet"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:text="@string/_23_4948_usd"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_20" />
+
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+            <RelativeLayout
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_120"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/rectangle_white_shape"
+                android:elevation="@dimen/dp_10"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                    android:id="@+id/tvLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="@dimen/dp_25"
+                    android:layout_marginEnd="@dimen/dp_25"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:background="@drawable/rectangle_red_shape"
+                    android:gravity="center"
+                    android:padding="@dimen/dp_12"
+                    android:text="@string/complete_checkout"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16" />
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</LinearLayout>

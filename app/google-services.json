@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1090777852018",
+    "firebase_url": "https://verkoop-11823.firebaseio.com",
+    "project_id": "verkoop-11823",
+    "storage_bucket": "verkoop-11823.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090777852018:android:9c8c4e476a0ee7c4",
+        "android_client_info": {
+          "package_name": "com.verkoopapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1090777852018-7eo2dpmr365m8s98qshdaenqfg918p26.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.verkoopapp",
+            "certificate_hash": "f28bc6fe478efcd3ef0394b56f3fdf604d2a7fe1"
+          }
+        },
+        {
+          "client_id": "1090777852018-qtgha4klinn72puvq72dada93ibr3v8n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkQ-B8gjSX7O2A0qsAmUJtrQFqe2i0svc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1090777852018-qtgha4klinn72puvq72dada93ibr3v8n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

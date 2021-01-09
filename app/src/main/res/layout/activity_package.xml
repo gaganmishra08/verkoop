@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.verkoopapp.utils.NonSwipeableViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <com.stfalcon.bottomtablayout.BottomTabLayout
+            android:id="@+id/bottomTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        />
+</FrameLayout>

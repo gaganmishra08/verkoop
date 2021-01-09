@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/dp_4"
+    android:layout_marginBottom="@dimen/dp_4"
+    android:background="@color/transparent">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:background="@drawable/blue_rectangle_shape"
+        android:padding="@dimen/dp_10">
+        <com.verkoopapp.fonts.textView.GothiBoldTextView
+            android:id="@+id/tvRightRaterMssg"
+            android:textColor="@color/dark_black"
+            android:textSize="@dimen/sp_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RatingBar
+            android:id="@+id/rbRatingRight"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_8"
+            android:numStars="5"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            android:theme="@style/RatingBar"/>
+
+        <com.verkoopapp.fonts.textView.GothicThinTextView
+            android:id="@+id/tvRightRateTime"
+            android:textColor="@color/light_gray"
+            android:textSize="@dimen/sp_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/dp_4" />
+    </LinearLayout>
+</LinearLayout>
