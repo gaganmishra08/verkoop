@@ -1,44 +1,32 @@
 package com.verkoopapp.adapter
 
 
-
+import android.app.Activity
 import android.content.Context
-import androidx.recyclerview.widget.RecyclerView
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-
 import com.verkoopapp.R
 import com.verkoopapp.models.ChatData
 import com.verkoopapp.utils.AppConstants
 import com.verkoopapp.utils.Utils
+import com.verkoopapp.utils.showFullImageDialog
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.chat_image_left_row.tvPhotoLeft
-import kotlinx.android.synthetic.main.chat_image_left_row.tvImageDataLeft
-import kotlinx.android.synthetic.main.chat_image_right_row.tvImageRight
-import kotlinx.android.synthetic.main.chat_image_right_row.tvDateImageRight
-import kotlinx.android.synthetic.main.chat_offer_left_row.tvLeftOfferMssg
-import kotlinx.android.synthetic.main.chat_offer_left_row.tvLeftOfferPrice
-import kotlinx.android.synthetic.main.chat_offer_left_row.tvLeftOfferTime
-import kotlinx.android.synthetic.main.chat_offer_right_row.tvRightOfferMssg
-import kotlinx.android.synthetic.main.chat_offer_right_row.tvRightOfferTime
-import kotlinx.android.synthetic.main.chat_offer_right_row.tvRightPrice
-import kotlinx.android.synthetic.main.chat_text_left_row.tvLeftMssg
-import kotlinx.android.synthetic.main.chat_text_left_row.tvLeftTime
-import kotlinx.android.synthetic.main.chat_text_right_row.tvRightMssg
-import kotlinx.android.synthetic.main.chat_text_right_row.tvRightTime
-import kotlinx.android.synthetic.main.rate_user_left_row.tvLeftRateMssg
-import kotlinx.android.synthetic.main.rate_user_left_row.tvLeftRateTime
-import kotlinx.android.synthetic.main.rate_user_left_row.rbRatingLeft
-import kotlinx.android.synthetic.main.rate_user_right_row.tvRightRateTime
-import kotlinx.android.synthetic.main.rate_user_right_row.tvRightRaterMssg
-import kotlinx.android.synthetic.main.rate_user_right_row.rbRatingRight
+import kotlinx.android.synthetic.main.chat_image_left_row.*
+import kotlinx.android.synthetic.main.chat_image_right_row.*
+import kotlinx.android.synthetic.main.chat_offer_left_row.*
+import kotlinx.android.synthetic.main.chat_offer_right_row.*
+import kotlinx.android.synthetic.main.chat_text_left_row.*
+import kotlinx.android.synthetic.main.chat_text_right_row.*
+import kotlinx.android.synthetic.main.rate_user_left_row.*
+import kotlinx.android.synthetic.main.rate_user_right_row.*
 import org.apache.commons.lang3.StringEscapeUtils
 
 
-class ChatAdapter(private val context:Context ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ChatAdapter(private val context: Activity) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val layoutInflater: LayoutInflater = LayoutInflater.from(context)
     private var chatHistoryList = ArrayList<ChatData>()
     val ROW_TEXT_RIGHT = 0
@@ -56,9 +44,9 @@ class ChatAdapter(private val context:Context ) : RecyclerView.Adapter<RecyclerV
             ROW_TEXT_RIGHT
         } else if (chatHistoryList[position].type == 0 && chatHistoryList[position].senderId != Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
             ROW_TEXT_LEFT
-        }else if (chatHistoryList[position].type == 1 && chatHistoryList[position].senderId == Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
+        } else if (chatHistoryList[position].type == 1 && chatHistoryList[position].senderId == Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
             ROW_IMAGE_RIGHT
-        }else if (chatHistoryList[position].type == 1 && chatHistoryList[position].senderId != Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
+        } else if (chatHistoryList[position].type == 1 && chatHistoryList[position].senderId != Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
             ROW_IMAGE_LEFT
         } else if (chatHistoryList[position].type == 2 && chatHistoryList[position].senderId == Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
             ROW_OFFER_RIGHT
@@ -72,11 +60,11 @@ class ChatAdapter(private val context:Context ) : RecyclerView.Adapter<RecyclerV
             ROW_OFFER_RIGHT
         } else if (chatHistoryList[position].type == 4 && chatHistoryList[position].senderId != Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
             ROW_OFFER_LERFT
-        }else if (chatHistoryList[position].type == 5 && chatHistoryList[position].senderId == Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
+        } else if (chatHistoryList[position].type == 5 && chatHistoryList[position].senderId == Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
             ROW_OFFER_RIGHT
         } else if (chatHistoryList[position].type == 5 && chatHistoryList[position].senderId != Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
             ROW_OFFER_LERFT
-        }else if (chatHistoryList[position].type == 6 && chatHistoryList[position].senderId == Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
+        } else if (chatHistoryList[position].type == 6 && chatHistoryList[position].senderId == Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
             ROW_RATE_RIGHT
         } else if (chatHistoryList[position].type == 6 && chatHistoryList[position].senderId != Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
             ROW_RATE_LEFT
@@ -140,8 +128,14 @@ class ChatAdapter(private val context:Context ) : RecyclerView.Adapter<RecyclerV
             (holder as LeftTextHolder).bindLeft(chatHistoryList[position])
         } else if (chatHistoryList[position].type == 1 && chatHistoryList[position].senderId == Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
             (holder as RightImageHolder).bindImageRight(chatHistoryList[position])
+            (holder as RightImageHolder).tvImageRight.setOnClickListener {
+                showFullImageDialog(context,AppConstants.IMAGE_URL + chatHistoryList[position].message )
+            }
         } else if (chatHistoryList[position].type == 1 && chatHistoryList[position].senderId != Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
             (holder as LeftImageHolder).bindImageLeft(chatHistoryList[position])
+            (holder as LeftImageHolder).tvPhotoLeft.setOnClickListener {
+                showFullImageDialog(context,AppConstants.IMAGE_URL + chatHistoryList[position].message )
+            }
         } else if (chatHistoryList[position].type == 2 && chatHistoryList[position].senderId == Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
             (holder as RightOfferHolder).bind(chatHistoryList[position])
         } else if (chatHistoryList[position].type == 2 && chatHistoryList[position].senderId != Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
@@ -158,7 +152,7 @@ class ChatAdapter(private val context:Context ) : RecyclerView.Adapter<RecyclerV
             (holder as RightOfferHolder).bind(chatHistoryList[position])
         } else if (chatHistoryList[position].type == 5 && chatHistoryList[position].senderId != Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
             (holder as LeftOfferHolder).bindLeft(chatHistoryList[position])
-        }else if (chatHistoryList[position].type == 6 && chatHistoryList[position].senderId == Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
+        } else if (chatHistoryList[position].type == 6 && chatHistoryList[position].senderId == Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
             (holder as RightRateHolder).bind(chatHistoryList[position])
         } else if (chatHistoryList[position].type == 6 && chatHistoryList[position].senderId != Utils.getPreferencesString(context, AppConstants.USER_ID).toInt()) {
             (holder as LeftRateHolder).bindLeft(chatHistoryList[position])
@@ -175,7 +169,7 @@ class ChatAdapter(private val context:Context ) : RecyclerView.Adapter<RecyclerV
 
     }
 
-  inner  class RightTextHolder(override val containerView: View?) : RecyclerView.ViewHolder(containerView!!), LayoutContainer {
+    inner class RightTextHolder(override val containerView: View?) : RecyclerView.ViewHolder(containerView!!), LayoutContainer {
         fun bind(chatData: ChatData) {
             tvRightMssg.text = StringEscapeUtils.unescapeJava(chatData.message)
             tvRightTime.text = Utils.setDate(chatData.timeStamp)
@@ -185,13 +179,13 @@ class ChatAdapter(private val context:Context ) : RecyclerView.Adapter<RecyclerV
 
     inner class LeftRateHolder(override val containerView: View?) : RecyclerView.ViewHolder(containerView!!), LayoutContainer {
         fun bindLeft(chatData: ChatData) {
-            tvLeftRateMssg.text ="RATED YOU"
-            rbRatingLeft.rating=chatData.message.toFloat()
+            tvLeftRateMssg.text = "RATED YOU"
+            rbRatingLeft.rating = chatData.message.toFloat()
             tvLeftRateTime.text = Utils.setDate(chatData.timeStamp)
         }
     }
 
-    inner  class RightRateHolder(override val containerView: View?) : RecyclerView.ViewHolder(containerView!!), LayoutContainer {
+    inner class RightRateHolder(override val containerView: View?) : RecyclerView.ViewHolder(containerView!!), LayoutContainer {
         fun bind(chatData: ChatData) {
             tvRightRaterMssg.text = "YOU RATED"
             rbRatingRight.rating = chatData.message.toFloat()
@@ -199,15 +193,15 @@ class ChatAdapter(private val context:Context ) : RecyclerView.Adapter<RecyclerV
         }
     }
 
-   inner class RightImageHolder(override val containerView: View?) : RecyclerView.ViewHolder(containerView!!), LayoutContainer {
+    inner class RightImageHolder(override val containerView: View?) : RecyclerView.ViewHolder(containerView!!), LayoutContainer {
         fun bindImageRight(chatData: ChatData) {
             if (!TextUtils.isEmpty(chatData.message)) {
-                Picasso.with(context).load(AppConstants.IMAGE_URL +chatData.message)
+                Picasso.with(context).load(AppConstants.IMAGE_URL + chatData.message)
                         .resize(250, 250)
                         .centerCrop()
                         .placeholder(R.mipmap.gallery_place)
                         .error(R.mipmap.gallery_place)
-                        .into( tvImageRight)
+                        .into(tvImageRight)
             }
             tvDateImageRight.text = Utils.setDate(chatData.timeStamp)
         }
@@ -216,16 +210,17 @@ class ChatAdapter(private val context:Context ) : RecyclerView.Adapter<RecyclerV
     inner class LeftImageHolder(override val containerView: View?) : RecyclerView.ViewHolder(containerView!!), LayoutContainer {
         fun bindImageLeft(chatData: ChatData) {
             if (!TextUtils.isEmpty(chatData.message)) {
-                Picasso.with(context).load(AppConstants.IMAGE_URL +chatData.message)
+                Picasso.with(context).load(AppConstants.IMAGE_URL + chatData.message)
                         .resize(250, 250)
                         .centerCrop()
                         .placeholder(R.mipmap.gallery_place)
                         .error(R.mipmap.gallery_place)
-                        .into( tvPhotoLeft)
+                        .into(tvPhotoLeft)
             }
             tvImageDataLeft.text = Utils.setDate(chatData.timeStamp)
         }
     }
+
     inner class RightOfferHolder(override val containerView: View?) : RecyclerView.ViewHolder(containerView!!), LayoutContainer {
         fun bind(chatData: ChatData) {
             if (chatData.type == 2) {
@@ -234,10 +229,10 @@ class ChatAdapter(private val context:Context ) : RecyclerView.Adapter<RecyclerV
                 tvRightOfferMssg.text = "ACCEPTED OFFER"
             } else if (chatData.type == 4) {
                 tvRightOfferMssg.text = "DECLINED OFFER"
-            }else if (chatData.type == 5) {
+            } else if (chatData.type == 5) {
                 tvRightOfferMssg.text = "CANCELLED OFFER"
             }
-            tvRightPrice.text = StringBuilder().append(Utils.getPreferencesString(context,AppConstants.CURRENCY_SYMBOL)).append(chatData.message)
+            tvRightPrice.text = StringBuilder().append(Utils.getPreferencesString(context, AppConstants.CURRENCY_SYMBOL)).append(chatData.message)
             tvRightOfferTime.text = Utils.setDate(chatData.timeStamp)
         }
     }
@@ -253,7 +248,7 @@ class ChatAdapter(private val context:Context ) : RecyclerView.Adapter<RecyclerV
             } else if (chatData.type == 5) {
                 tvLeftOfferMssg.text = "CANCELLED OFFER"
             }
-            tvLeftOfferPrice.text = StringBuilder().append(Utils.getPreferencesString(context,AppConstants.CURRENCY_SYMBOL)).append(chatData.message)
+            tvLeftOfferPrice.text = StringBuilder().append(Utils.getPreferencesString(context, AppConstants.CURRENCY_SYMBOL)).append(chatData.message)
             tvLeftOfferTime.text = Utils.setDate(chatData.timeStamp)
         }
 
