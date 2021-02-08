@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -11,8 +11,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/toolbar_home"
-            android:visibility="gone"/>
+        <include
+            layout="@layout/toolbar_home"
+            android:visibility="gone" />
 
         <com.verkoopapp.utils.NonSwipeableViewPager
             android:id="@+id/viewPager"
@@ -26,8 +27,8 @@
             android:id="@+id/bottomTabLayout"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:scrollIndicators="none"
             android:background="@color/white"
+            android:scrollIndicators="none"
             tools:targetApi="m" />
     </LinearLayout>
 
@@ -35,9 +36,9 @@
         android:id="@+id/tvSell"
         android:layout_width="@dimen/dp_50"
         android:layout_height="@dimen/dp_50"
-        app:srcCompat="@drawable/ic_add_sell"
         android:layout_gravity="center|bottom"
-        android:layout_marginBottom="@dimen/dp_25">
+        android:layout_marginBottom="@dimen/dp_25"
+        app:srcCompat="@drawable/ic_add_sell">
 
     </androidx.appcompat.widget.AppCompatImageView>
 
@@ -47,8 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:indeterminate="true"
-        android:visibility="gone"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
-        />
+        android:visibility="gone" />
 </FrameLayout>

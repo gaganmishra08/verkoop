@@ -19,7 +19,7 @@ import com.verkoopapp.customgallery.PickerController
 import com.verkoopapp.utils.Utils
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.gallery_item.*
-
+import java.io.File
 
 
 class GalleryAdapter(private var context: Activity, private var llParent: LinearLayout, private var pickerController: PickerController, private var saveDir:String) : RecyclerView.Adapter<GalleryAdapter.ViewHolder>() {
@@ -109,6 +109,8 @@ class GalleryAdapter(private var context: Activity, private var llParent: Linear
                 imageCountCallBack.imageCount(imageCount)
             }
             flCamera.setOnClickListener {
+                val storageDir = File(saveDir)
+                if (!storageDir.exists()) storageDir.mkdirs()
                 Log.e("TAG", "bindcamera: "+saveDir)
                 pickerController.takePicture(context, saveDir)
             }

@@ -70,16 +70,7 @@
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/sp_18" />
 
-                            <com.verkoopapp.fonts.textView.GothiBoldTextView
-                                android:id="@+id/tvLikes"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="@dimen/dp_10"
-                                android:drawablePadding="@dimen/dp_10"
-                                android:drawableStart="@mipmap/post_liked"
-                                android:padding="@dimen/dp_5"
-                                android:textColor="@color/colorAccent"
-                                android:textSize="@dimen/sp_14" />
+
                         </LinearLayout>
 
                         <com.verkoopapp.fonts.textView.GothiBoldTextView
@@ -123,7 +114,6 @@
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/dp_10"
                             android:orientation="horizontal"
                             android:paddingEnd="@dimen/dp_8"
                             android:paddingStart="@dimen/dp_8">
@@ -143,7 +133,7 @@
                                 android:gravity="start"
                                 android:text="@string/coins"
                                 android:layout_height="@dimen/dp_30"
-                                android:textColor="@color/black_55"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/sp_18"
                                 tools:ignore="RelativeOverlap" />
 
@@ -160,12 +150,24 @@
                                 android:textSize="@dimen/sp_14" />
                         </RelativeLayout>
 
+                        <com.verkoopapp.fonts.textView.GothicThinTextView
+                            android:id="@+id/tvLikes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dp_10"
+                            android:drawablePadding="@dimen/dp_4"
+                            android:drawableStart="@mipmap/post_liked"
+                            android:paddingStart="@dimen/dp_8"
+                            android:textColor="@color/blue"
+                            android:textSize="@dimen/sp_14"
+                            tools:ignore="RtlSymmetry" />
+
                         <com.verkoopapp.fonts.textView.GothiBoldTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Description"
                             android:layout_marginEnd="@dimen/dp_20"
-                            android:layout_marginTop="@dimen/dp_8"
+                            android:layout_marginTop="@dimen/dp_4"
                             android:paddingEnd="@dimen/dp_8"
                             android:paddingStart="@dimen/dp_8"
                             android:textColor="@color/black"
@@ -730,7 +732,7 @@
                                 android:textColor="@color/text_gray"
                                 android:textSize="@dimen/sp_14" />
 
-                            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                            <com.verkoopapp.fonts.textView.GothicThinTextView
                                 android:id="@+id/tvAddress"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -772,7 +774,7 @@
                             android:orientation="horizontal"
                             android:gravity="center"
                             android:background="@drawable/rounded_background_gray"
-                            android:paddingEnd="@dimen/dp_8"
+
                             android:paddingStart="@dimen/dp_8">
 
                             <com.verkoopapp.fonts.editText.GothicThinEditText
@@ -791,8 +793,7 @@
                             <com.verkoopapp.fonts.textView.GothiBoldTextView
                                 android:id="@+id/tvPost"
                                 android:layout_width="@dimen/dp_100"
-                                android:layout_height="@dimen/dp_40"
-                                android:layout_marginEnd="@dimen/dp_10"
+                                android:layout_height="match_parent"
                                 android:paddingBottom="@dimen/dp_10"
                                 android:paddingTop="@dimen/dp_10"
                                 android:gravity="center"
@@ -815,76 +816,89 @@
 
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/sellCardItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            app:cardBackgroundColor="@color/white">
+       <LinearLayout
+           android:layout_gravity="bottom"
+           android:gravity="bottom"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="@color/white"
+           android:orientation="vertical">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="1.5dp"
+               android:background="@color/gray"/>
+           <LinearLayout
+               android:layout_marginTop="@dimen/dp_12"
+               android:layout_width="match_parent"
+               android:layout_marginBottom="@dimen/dp_12"
+               android:layout_height="wrap_content"
+               android:elevation="@dimen/dp_10">
 
-            <LinearLayout
-                android:id="@+id/card_view"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_120"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:layout_marginTop="@dimen/dp_10"
-                android:background="@drawable/rectangle_white_shape"
-                android:elevation="@dimen/dp_10">
-
-
-                <LinearLayout
-                    android:id="@+id/llChat"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="2"
-                    android:layout_marginLeft="@dimen/dp_10"
-                    android:layout_marginRight="@dimen/dp_10"
-                    android:background="@drawable/rectangle_whiter_shape"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <com.verkoopapp.fonts.textView.GothiBoldTextView
-                        android:id="@+id/tvAll"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/dp_14"
-                        android:text="@string/chat_"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/sp_12" />
-
-                </LinearLayout>
+               <com.verkoopapp.fonts.textView.GothiBoldTextView
+                   android:id="@+id/tvBottomLikes"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginEnd="@dimen/dp_10"
+                   android:drawablePadding="@dimen/dp_4"
+                   android:drawableStart="@mipmap/post_liked"
+                   android:padding="@dimen/dp_5"
+                   android:layout_gravity="center_vertical"
+                   android:layout_marginStart="@dimen/dp_8"
+                   android:textColor="@color/colorAccent"
+                   android:textSize="@dimen/sp_16" />
 
 
+               <LinearLayout
+                   android:id="@+id/llChat"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:layout_weight="2"
+                   android:layout_marginLeft="@dimen/dp_10"
+                   android:layout_marginRight="@dimen/dp_10"
+                   android:background="@drawable/rectangle_whiter_shape"
+                   android:gravity="center"
+                   android:orientation="vertical">
+
+                   <com.verkoopapp.fonts.textView.GothiBoldTextView
+                       android:id="@+id/tvAll"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:padding="@dimen/dp_14"
+                       android:text="@string/chat_"
+                       android:textColor="@color/black"
+                       android:textSize="@dimen/sp_12" />
+
+               </LinearLayout>
 
 
-                <LinearLayout
-                    android:id="@+id/llBuying"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="2"
-                    android:layout_marginLeft="@dimen/dp_10"
-                    android:layout_marginRight="@dimen/dp_10"
-                    android:background="@drawable/rectangle_red_shape"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <com.verkoopapp.fonts.textView.GothiBoldTextView
-                        android:id="@+id/tvBuying"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/dp_14"
-                        android:text="@string/make_offer_"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/sp_12" />
 
 
-                </LinearLayout>
-            </LinearLayout>
+               <LinearLayout
+                   android:id="@+id/llBuying"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:layout_weight="2"
+                   android:layout_marginLeft="@dimen/dp_10"
+                   android:layout_marginRight="@dimen/dp_10"
+                   android:background="@drawable/rectangle_red_shape"
+                   android:gravity="center"
+                   android:orientation="vertical">
 
-        </androidx.cardview.widget.CardView>
+                   <com.verkoopapp.fonts.textView.GothiBoldTextView
+                       android:id="@+id/tvBuying"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:padding="@dimen/dp_14"
+                       android:text="@string/make_offer_"
+                       android:textColor="@color/white"
+                       android:textSize="@dimen/sp_12" />
+
+
+               </LinearLayout>
+           </LinearLayout>
+       </LinearLayout>
 
         <com.verkoopapp.fonts.textView.GothiBoldTextView
             android:layout_width="wrap_content"

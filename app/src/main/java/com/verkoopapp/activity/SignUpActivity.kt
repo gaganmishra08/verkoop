@@ -7,6 +7,8 @@ import android.content.pm.PackageManager
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.*
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.util.Base64
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +23,7 @@ import com.verkoopapp.network.ServiceHelper
 import com.verkoopapp.utils.AppConstants
 import com.verkoopapp.utils.Utils
 import kotlinx.android.synthetic.main.signup_activity.*
+import kotlinx.android.synthetic.main.signup_activity.back_button
 import retrofit2.Response
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
@@ -45,9 +48,18 @@ class SignUpActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+        ivShowHidePassword.setOnClickListener {
+            showHidePass()
+        }
+        ivConfShowHidePassword.setOnClickListener {
+            showConfHidePass()
+        }
+
         setData()
         ccp.setCountryForPhoneCode(1)
         firebaseDeviceToken()
+
+
     }
 
     private fun firebaseDeviceToken() {
@@ -173,6 +185,25 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
         etName.filters = arrayOf<InputFilter>(filter)
+    }
+
+    private fun showHidePass(){
+        if (etPasswordS.transformationMethod == PasswordTransformationMethod.getInstance()){
+            ivShowHidePassword.setImageResource(R.mipmap.password_show)
+            etPasswordS.transformationMethod = HideReturnsTransformationMethod.getInstance()
+        }else{
+            ivShowHidePassword.setImageResource(R.mipmap.password_hide)
+            etPasswordS.transformationMethod = PasswordTransformationMethod.getInstance()
+        }
+    }
+    private fun showConfHidePass(){
+        if (etConfPassword.transformationMethod == PasswordTransformationMethod.getInstance()){
+            ivConfShowHidePassword.setImageResource(R.mipmap.password_show)
+            etConfPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+        }else{
+            ivConfShowHidePassword.setImageResource(R.mipmap.password_hide)
+            etConfPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+        }
     }
 
     private fun isValidate(): Boolean {

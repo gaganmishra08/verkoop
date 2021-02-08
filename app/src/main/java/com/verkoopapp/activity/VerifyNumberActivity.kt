@@ -27,7 +27,7 @@ class VerifyNumberActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.verify_number_activity)
-        ccpPhone.setCountryForPhoneCode(27)
+        ccpPhone.setCountryForPhoneCode(1)
         setData()
     }
 

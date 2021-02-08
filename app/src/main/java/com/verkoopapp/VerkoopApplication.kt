@@ -109,6 +109,8 @@ class VerkoopApplication : Application() {
                     .on(Socket.EVENT_DISCONNECT) { _ ->
                         /* Socket disconnect listener */
                         Log.e("<<<<<SOCKET>>>>>", "DISCONNECTED")
+                    }.on(Socket.EVENT_CONNECT_ERROR){
+                        Log.e("<<<<<SOCKET>>>>>", "CONNECT ERROR")
                     }
             socket.connect()
         }

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/llParentItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:padding="@dimen/dp_4"
     android:layout_margin="@dimen/dp_6"
-    android:background="@drawable/dashboard_item_background"
-    android:orientation="vertical"
-    android:padding="@dimen/dp_6">
+    android:background="@drawable/gray_border_background"
+    android:orientation="vertical">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -18,11 +19,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/dp_8"
             android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_8"
             android:orientation="vertical"
-            android:paddingTop="@dimen/dp_8"
-            android:paddingBottom="@dimen/dp_5">
+            android:paddingBottom="@dimen/dp_5"
+            android:paddingTop="@dimen/dp_8">
 
 
             <com.github.florent37.shapeofview.shapes.RoundRectView
@@ -45,23 +46,15 @@
                     android:scaleType="fitXY"
                     android:src="@mipmap/post_placeholder" />
 
-                <com.verkoopapp.fonts.textView.GothicThinTextView
-                    android:id="@+id/tvPostOn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/dp_10"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/sp_10" />
-
                 <com.verkoopapp.fonts.textView.GothiBoldTextView
                     android:id="@+id/tvLikesHome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="top|right"
-                    android:drawableStart="@drawable/ic_favorite_grey"
                     android:drawablePadding="@dimen/sp_10"
-                    android:gravity="top|right"
                     android:paddingTop="@dimen/dp_10"
+                    android:drawableStart="@drawable/ic_favorite_grey"
+                    android:gravity="top|right"
                     android:textColor="@color/colorPrimary" />
 
                 <com.verkoopapp.fonts.textView.GothiBoldTextView
@@ -90,41 +83,43 @@
                     android:gravity="center_vertical">
 
 
+
                     <com.verkoopapp.fonts.textView.GothiBoldTextView
                         android:id="@+id/tvProductHome"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="@dimen/dp_6"
                         android:layout_marginTop="@dimen/dp_8"
-                        android:layout_toStartOf="@+id/ll_condition"
-                        android:ellipsize="end"
                         android:maxLines="1"
+                        android:layout_toLeftOf="@+id/ll_condition"
+                        android:layout_alignParentStart="true"
                         android:textColor="@color/black"
                         android:textSize="@dimen/sp_12" />
 
                     <LinearLayout
+                        android:layout_alignParentEnd="true"
                         android:id="@+id/ll_condition"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
                         android:layout_marginStart="@dimen/dp_6"
                         android:orientation="horizontal">
 
                         <androidx.appcompat.widget.AppCompatImageView
                             android:id="@+id/iv_used"
+                            android:padding="@dimen/dp_6"
+
                             android:layout_width="@dimen/dp_30"
                             android:layout_height="@dimen/dp_30"
-                            android:padding="@dimen/dp_6"
                             app:srcCompat="@drawable/ic_used_item">
 
                         </androidx.appcompat.widget.AppCompatImageView>
 
                         <androidx.appcompat.widget.AppCompatImageView
                             android:id="@+id/iv_new"
+                            android:visibility="gone"
+                            android:padding="@dimen/dp_6"
                             android:layout_width="@dimen/dp_30"
                             android:layout_height="@dimen/dp_30"
-                            android:padding="@dimen/dp_6"
-                            android:visibility="gone"
                             app:srcCompat="@drawable/ic_new_item">
 
                         </androidx.appcompat.widget.AppCompatImageView>
@@ -135,8 +130,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/sp_12"
-                            android:visibility="gone" />
+                            android:visibility="gone"
+                            android:textSize="@dimen/sp_12" />
                     </LinearLayout>
 
                 </RelativeLayout>
@@ -152,6 +147,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
+                        android:paddingStart="@dimen/dp_8"
                         tools:ignore="RtlSymmetry">
 
 
@@ -160,7 +156,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textStyle="bold"
+                            android:textSize="14sp" />
                     </LinearLayout>
 
 
@@ -175,8 +172,8 @@
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/ivPicProfile"
-                        android:layout_width="@dimen/dp_16"
-                        android:layout_height="@dimen/dp_16"
+                        android:layout_width="@dimen/dp_32"
+                        android:layout_height="@dimen/dp_32"
                         android:src="@mipmap/pic_placeholder"
                         app:civ_border_color="#FF000000"
                         app:civ_border_width="0dp" />
@@ -188,14 +185,20 @@
                         android:layout_marginStart="@dimen/dp_8"
                         android:orientation="vertical">
 
-                        <com.verkoopapp.fonts.textView.GothicThinTextView
+                        <com.verkoopapp.fonts.textView.GothiBoldTextView
                             android:id="@+id/tvNameHome"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:maxLines="1"
-                            android:minLines="1"
                             android:textColor="@color/black"
+                            android:maxLines="2"
                             android:textSize="@dimen/sp_12" />
+
+                        <com.verkoopapp.fonts.textView.GothicThinTextView
+                            android:id="@+id/tvPostOn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/light_gray"
+                            android:textSize="@dimen/sp_10" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -208,15 +211,15 @@
             android:layout_height="match_parent"
             android:layout_gravity="end"
             android:background="@color/gray_back"
-            android:orientation="horizontal"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:orientation="horizontal" />
 
-        <View
-            android:id="@+id/viewItem"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_1"
-            android:layout_gravity="bottom"
-            android:background="@color/gray_back"
-            android:visibility="gone" />
+        <!-- <View
+             android:id="@+id/viewItem"
+             android:layout_width="match_parent"
+             android:layout_height="@dimen/dp_1"
+             android:layout_gravity="bottom"
+             android:visibility="gone"
+             android:background="@color/gray_back" />-->
     </FrameLayout>
 </LinearLayout>

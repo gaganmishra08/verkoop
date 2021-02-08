@@ -119,7 +119,7 @@ dependencies {
     implementation 'com.github.nisrulz:qreader:2.1.2'
     implementation 'com.edwardvanraak:MaterialBarcodeScanner:0.0.6-ALPHA'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
-    implementation 'io.branch.sdk.android:library:3.2.0'
+    implementation 'io.branch.sdk.android:library:5.0.3'
     implementation 'com.facebook.android:facebook-share:5.0.3'
     implementation 'com.google.firebase:firebase-analytics:17.4.4'
     implementation 'com.github.manojbhadane:PaymentCardView:v1.3'

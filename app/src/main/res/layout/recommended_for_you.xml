@@ -22,10 +22,4 @@
             android:textSize="@dimen/sp_18" />
 
     </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_.5"
-        android:layout_gravity="end"
-        android:background="@color/gray_back" />
-
 </LinearLayout>

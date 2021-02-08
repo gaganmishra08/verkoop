@@ -12,7 +12,6 @@ import android.net.Uri
 import android.os.Environment
 import android.preference.PreferenceManager
 import android.provider.MediaStore
-import androidx.core.content.ContextCompat
 import android.util.Log
 import android.util.TypedValue
 import android.view.View
@@ -69,6 +68,7 @@ object Utils {
         return sharedPreferences.getBoolean(key, false)
 
     }
+
     fun getPreferencesInt(context: Activity, key: String): Int {
 
         val sharedPreferences = PreferenceManager
@@ -253,17 +253,17 @@ object Utils {
     }
 
     @SuppressLint("SimpleDateFormat")
-    fun dateDifference(pre: String, dateString: String,daysNo:Int): String {
+    fun dateDifference(pre: String, dateString: String, daysNo: Int): String {
         val format = SimpleDateFormat("MMMM dd, yyyy")
         val c = Calendar.getInstance()
         try {
             c.time = format.parse(dateString)
         } catch (e: Exception) {
-            Log.e("exception","exceptionDone")
+            Log.e("exception", "exceptionDone")
         }
-	c.add(Calendar.DAY_OF_MONTH, daysNo)
-	val newDate = format.format(c.time)
-	System.out.println("Date after Addition: "+newDate)
+        c.add(Calendar.DAY_OF_MONTH, daysNo)
+        val newDate = format.format(c.time)
+        System.out.println("Date after Addition: " + newDate)
         return newDate
 
     }
@@ -586,8 +586,10 @@ object Utils {
         inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
-    fun setDatePicker(context: Context, currentDate: CurrentDate) {
+    fun setDatePicker(context: Context, selectedDate: String, currentDate: CurrentDate) {
+
         val myCalendar = Calendar.getInstance()
+        myCalendar.add(Calendar.DAY_OF_MONTH, -1)
         val date = { view: DatePicker, year: Int, monthOfYear: Int, dayOfMonth: Int ->
             var month = (monthOfYear + 1).toString()
             var day = dayOfMonth.toString()
@@ -600,7 +602,7 @@ object Utils {
             currentDate.getSelectedDate(year.toString() + "-" + month + "-" + day)
         }
         val picker = DatePickerDialog(context, R.style.datepicker,
-                date, myCalendar
+                date,myCalendar
                 .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH))
         picker.datePicker.maxDate = myCalendar.time.time
         picker.show()
@@ -649,7 +651,7 @@ object Utils {
         return timeFormat.format(dateServ)
     }
 
-     fun appInstalledOrNot(context:Context,uri: String): Boolean {
+    fun appInstalledOrNot(context: Context, uri: String): Boolean {
         val pm = context.packageManager
         val appInstalled: Boolean
         appInstalled = try {
@@ -662,8 +664,8 @@ object Utils {
     }
 
     fun convertCurrency(context: Context, from: String, amount: Double): String? {
-        Log.e("TAG", "convertCurrency: "+from)
-        Log.e("TAG", "convertCurrency: "+amount)
+        Log.e("TAG", "convertCurrency: " + from)
+        Log.e("TAG", "convertCurrency: " + amount)
         Log.e("TAG", "convertCurrency: ")
         if (from.isNullOrEmpty()) {
             return "${getPreferencesString(context, AppConstants.CURRENCY_SYMBOL)} --"
@@ -695,9 +697,8 @@ object Utils {
 
 
             return "${String.format("%.2f", output)}"
-        }
-        catch (ex:Exception){
-            Log.e("TAG", "convertCurrencyToUsdex: "+ex.message)
+        } catch (ex: Exception) {
+            Log.e("TAG", "convertCurrencyToUsdex: " + ex.message)
         }
         return null
     }
@@ -715,7 +716,6 @@ object Utils {
         val output = convert * amount
         return String.format("%.2f", output).toDouble()
     }
-
 
 
 }

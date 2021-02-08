@@ -21,21 +21,35 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:background="@drawable/gray_border_background"
         android:orientation="vertical">
-        <com.verkoopapp.fonts.textView.GothicThinTextView
-            android:id="@+id/tvCategoryName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="@dimen/dp_8"
-            android:paddingBottom="@dimen/dp_8"
-            android:paddingStart="@dimen/dp_20"
-            android:paddingEnd="@dimen/dp_10"
-            android:textColor="@color/white"
-            android:textSize="@dimen/sp_16"
-            android:background="@color/colorPrimary"
-            android:text="@string/health_beauty"/>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+           <de.hdodenhof.circleimageview.CircleImageView
+               android:id="@+id/ivCategory"
+               android:layout_width="@dimen/dp_32"
+               android:padding="@dimen/dp_4"
+               android:layout_height="@dimen/dp_32"
+               android:layout_margin="@dimen/dp_6"
+               android:src="@drawable/logo"
+               app:civ_circle_background_color="@color/gray"
+               android:layout_gravity="center_vertical" />
+           <com.verkoopapp.fonts.textView.GothiBoldTextView
+               android:id="@+id/tvCategoryName"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:paddingTop="@dimen/dp_4"
+               android:layout_gravity="center_vertical"
+               android:paddingBottom="@dimen/dp_4"
+               android:gravity="center_vertical"
+               android:paddingStart="@dimen/dp_4"
+               android:paddingEnd="@dimen/dp_10"
+               android:textColor="@color/black"
+               android:textSize="@dimen/sp_14"
+               android:text="@string/health_beauty"/>
+       </LinearLayout>
         <com.verkoopapp.utils.NonscrollRecylerview
             android:id="@+id/rvSubCategoriesName"
           android:layout_margin="@dimen/dp_8"

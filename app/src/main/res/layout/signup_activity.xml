@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:fitsSystemWindows="true"
     android:focusable="true"
     android:focusableInTouchMode="true"
@@ -198,22 +199,38 @@
                         android:background="@color/light_gray">
                     </View>
 
-                    <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
-                        android:id="@+id/etPasswordS"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:drawablePadding="@dimen/dp_10"
-                        android:hint="@string/password"
-                        android:imeOptions="actionDone"
-                        android:inputType="textPassword"
-                        android:maxLength="80"
-                        android:textColor="@color/colorPrimary"
-                        android:textCursorDrawable="@drawable/cursor_shape"
-                        android:maxLines="1"
-                        android:padding="@dimen/dp_10"
-                        app:drawable_hide="@mipmap/password_hide"
-                        app:drawable_show="@mipmap/password_show" />
+                        android:layout_height="wrap_content">
+
+
+                        <com.verkoopapp.fonts.editText.GothicThinEditText
+                            android:id="@+id/etPasswordS"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_50"
+                            android:background="@null"
+                            android:drawablePadding="@dimen/dp_10"
+                            android:hint="@string/password"
+                            android:textCursorDrawable="@drawable/cursor_shape"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:maxLength="80"
+                            android:textStyle="normal"
+                            android:maxLines="1"
+                            android:layout_toStartOf="@+id/ivShowHidePassword"
+                            android:padding="@dimen/dp_10"
+                            android:textColor="@color/colorPrimary"
+                            tools:ignore="MissingClass" />
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivShowHidePassword"
+                            android:layout_width="@dimen/dp_40"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_height="@dimen/dp_40"
+                            android:padding="@dimen/dp_10"
+                            app:srcCompat="@mipmap/password_hide"
+                            android:layout_gravity="center"/>
+                    </RelativeLayout>
                 </LinearLayout>
 
 
@@ -239,22 +256,38 @@
                         android:background="@color/light_gray">
                     </View>
 
-                    <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
-                        android:id="@+id/etConfPassword"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@null"
-                        android:drawablePadding="@dimen/dp_10"
-                        android:hint="@string/confirm_password"
-                        android:imeOptions="actionDone"
-                        android:inputType="textPassword"
-                        android:textCursorDrawable="@drawable/cursor_shape"
-                        android:maxLength="80"
-                        android:maxLines="1"
-                        android:padding="@dimen/dp_10"
-                        android:textColor="@color/colorPrimary"
-                        app:drawable_hide="@mipmap/password_hide"
-                        app:drawable_show="@mipmap/password_show" />
+                        android:layout_height="wrap_content">
+
+
+                        <com.verkoopapp.fonts.editText.GothicThinEditText
+                            android:id="@+id/etConfPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_50"
+                            android:background="@null"
+                            android:drawablePadding="@dimen/dp_10"
+                            android:hint="@string/password"
+                            android:textCursorDrawable="@drawable/cursor_shape"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:maxLength="80"
+                            android:textStyle="normal"
+                            android:maxLines="1"
+                            android:layout_toStartOf="@+id/ivConfShowHidePassword"
+                            android:padding="@dimen/dp_10"
+                            android:textColor="@color/colorPrimary"
+                            tools:ignore="MissingClass" />
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivConfShowHidePassword"
+                            android:layout_width="@dimen/dp_40"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_height="@dimen/dp_40"
+                            android:padding="@dimen/dp_10"
+                            app:srcCompat="@mipmap/password_hide"
+                            android:layout_gravity="center"/>
+                    </RelativeLayout>
                 </LinearLayout>
 
 

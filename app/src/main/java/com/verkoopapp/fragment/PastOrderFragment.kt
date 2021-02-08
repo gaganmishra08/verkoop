@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.verkoopapp.R
 import com.verkoopapp.activity.FoodHomeActivity
 import com.verkoopapp.adapter.PastOrderAdapter
-import kotlinx.android.synthetic.main.adds_category_row.*
+import kotlinx.android.synthetic.main.ads_category_row.*
 import kotlinx.android.synthetic.main.fragment_past_order.*
 
 

@@ -22,7 +22,7 @@ import com.verkoopapp.network.ServiceHelper
 import com.verkoopapp.utils.AppConstants
 import com.verkoopapp.utils.Utils
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.item_row.*
+import kotlinx.android.synthetic.main.adapter_favourite.*
 import retrofit2.Response
 
 
@@ -31,12 +31,12 @@ class FavouritesAdapter(private val context: Activity, private val rvFavourites:
     private var listFavourites = ArrayList<ItemHome>()
     private var width = 0
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = inflater.inflate(R.layout.item_row, parent, false)
-        val params = view.layoutParams
-        params.width = rvFavourites.width / 2
-        width = params.width
+        val view = inflater.inflate(R.layout.adapter_favourite, parent, false)
+        //val params = view.layoutParams
+        //params.width = rvFavourites.width / 2
+        //width = params.width
         // likeDisLikeListener=context as FavouritesActivity
-        view.layoutParams = params
+        //view.layoutParams = params
         return ViewHolder(view)
     }
 
@@ -51,7 +51,7 @@ class FavouritesAdapter(private val context: Activity, private val rvFavourites:
 
     inner class ViewHolder(override val containerView: View?) : RecyclerView.ViewHolder(containerView!!), LayoutContainer {
         fun bind(data: ItemHome) {
-            ivProductImageHome.layoutParams.height = width - 16
+            //ivProductImageHome.layoutParams.height = width
             tvNameHome.text = data.username
             tvProductHome.text = data.name
             /* if(adapterPosition %2==0){
@@ -124,8 +124,8 @@ class FavouritesAdapter(private val context: Activity, private val rvFavourites:
                     val intent = Intent(context, ProductDetailsActivity::class.java)
                     intent.putExtra(AppConstants.ITEM_ID, data.id)
                     intent.putExtra(AppConstants.ADAPTER_POSITION, adapterPosition)
-                  //  if (context is HomeActivity) {
-                        context.startActivityForResult(intent, 3)
+                    //  if (context is HomeActivity) {
+                    context.startActivityForResult(intent, 3)
                     //}else if (con)
                 }
 
@@ -186,12 +186,12 @@ class FavouritesAdapter(private val context: Activity, private val rvFavourites:
                         listFavourites[position].is_like = !listFavourites[position].is_like
                         listFavourites[position].items_like_count = listFavourites[position].items_like_count - 1
                         listFavourites[position].like_id = 0
-                        notifyItemChanged(position )
+                        notifyItemChanged(position)
                     }
 
                     override fun onFailure(msg: String?) {
                         listFavourites[position].isClicked = !listFavourites[position].isClicked
-                        notifyItemChanged(position )
+                        notifyItemChanged(position)
                     }
                 })
     }

@@ -123,7 +123,7 @@ class SplashActivity : AppCompatActivity() {
                 Log.e("<<<LinkRequestString>>>", referringParams.toString())
                 Log.i("BRANCH SDK", referringParams.toString())
                 try {
-                    type = referringParams.getString("type").toInt()
+                    type = referringParams!!.getString("type").toInt()
                     if (type == 1) {
                         id = referringParams.getString("product_id").toInt()
                     } else if (type == 2) {

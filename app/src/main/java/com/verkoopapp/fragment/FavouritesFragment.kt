@@ -103,19 +103,19 @@ class FavouritesFragment : Fragment(), OnItemClickListener {
     private fun setAdapter() {
         linearLayoutManager = GridLayoutManager(context!!, 2)
         rvFavouriteList.layoutManager = linearLayoutManager
-//        rvFavouriteList.addItemDecoration(GridSpacingItemDecoration(2, Utils.dpToPx(context!!, 2F).toInt(), false))
-        rvFavouriteList.addItemDecoration(SpacingItem(2, 20, false))
+        //rvFavouriteList.addItemDecoration(GridSpacingItemDecoration(2, Utils.dpToPx(context!!, 2F).toInt(), false))
+        //rvFavouriteList.addItemDecoration(SpacingItem(2, 20, false))
         favouritesAdapter = FavouritesAdapter(activity!!, rvFavouriteList, 0, this)
 
         rvFavouriteList.adapter = favouritesAdapter
         //  rvFavouriteList.addOnScrollListener(recyclerViewOnScrollListener)
         ivLeftLocation.setOnClickListener {
-//            onBackPressed()
+            // onBackPressed()
         }
         if (comingFrom == 3) {
             tvHeaderLoc.text = "Search Result"
         } else if (comingFrom != 1) {
-            tvHeaderLoc.text = getString(R.string.favourites)
+            tvHeaderLoc.text = getString(R.string.my_favourite)
         } else {
             tvHeaderLoc.text = getString(R.string.your_daily_picks)
         }

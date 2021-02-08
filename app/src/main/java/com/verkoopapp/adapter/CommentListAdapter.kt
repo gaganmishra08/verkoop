@@ -3,6 +3,7 @@ package com.verkoopapp.adapter
 import android.content.Context
 import androidx.recyclerview.widget.RecyclerView
 import android.text.TextUtils
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,7 +45,9 @@ class CommentListAdapter(private val context: Context,private val progressBar: P
     }
  inner  class ViewHolder(override val containerView: View?):RecyclerView.ViewHolder(containerView!!),LayoutContainer{
      fun bind(modal: CommentModal) {
-         if(comingType!=0||modal.user_id==Utils.getPreferencesString(context,AppConstants.USER_ID).toInt()){
+         Log.d("Other Id",modal.user_id.toString())
+         Log.d("User Id",Utils.getPreferencesString(context,AppConstants.USER_ID))
+         if(/*comingType!=0||*/modal.user_id==Utils.getPreferencesString(context,AppConstants.USER_ID).toInt()){
              ivOption.visibility=View.VISIBLE
          }else{
              ivOption.visibility=View.INVISIBLE

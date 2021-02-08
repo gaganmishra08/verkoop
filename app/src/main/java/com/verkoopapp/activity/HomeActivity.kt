@@ -13,8 +13,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import io.socket.client.Ack
-import io.socket.client.Socket
 import com.google.api.services.vision.v1.Vision
 import com.google.api.services.vision.v1.model.BatchAnnotateImagesResponse
 import com.google.api.services.vision.v1.model.Feature
@@ -24,13 +22,14 @@ import com.verkoopapp.R
 import com.verkoopapp.VerkoopApplication
 import com.verkoopapp.adapter.HomePagerAdapter
 import com.verkoopapp.fragment.*
-import com.verkoopapp.fragment.HomeFragment.Companion.newInstance
 import com.verkoopapp.models.*
 import com.verkoopapp.network.ServiceHelper
 import com.verkoopapp.utils.AppConstants
 import com.verkoopapp.utils.GPSTracker
 import com.verkoopapp.utils.PermissionCheck
 import com.verkoopapp.utils.Utils
+import io.socket.client.Ack
+import io.socket.client.Socket
 import kotlinx.android.synthetic.main.home_activity.*
 import kotlinx.android.synthetic.main.home_activity.tvSell
 import kotlinx.android.synthetic.main.home_fragment.*

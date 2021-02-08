@@ -48,6 +48,7 @@ class StateActivity: AppCompatActivity(), CityListAdapter.ClickEventCallBack {
 
     private fun setData() {
         tvHeaderLoc.text = getString(R.string.city)
+        etSearchPlace.hint = getString(R.string.search_city)
         ivLeftLocation.setOnClickListener {
             onBackPressed()
         }

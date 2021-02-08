@@ -21,21 +21,21 @@ import com.verkoopapp.network.ServiceHelper
 import com.verkoopapp.utils.AppConstants
 import com.verkoopapp.utils.Utils
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.item_row.*
+import kotlinx.android.synthetic.main.daily_picks_item_row.*
 import retrofit2.Response
 
 
-class YourDailyPicksAdapter(private val context:Context,private val recyclerView:Int,private val itemsList: ArrayList<ItemHome>,private val homeFragment: HomeFragment):RecyclerView.Adapter<YourDailyPicksAdapter.ViewHolder>() {
+class YourDailyPicksAdapter(private val context: Context, private val recyclerView: Int, private val itemsList: ArrayList<ItemHome>, private val homeFragment: HomeFragment) : RecyclerView.Adapter<YourDailyPicksAdapter.ViewHolder>() {
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var width = 0
     lateinit var price: String;
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = inflater.inflate(R.layout.item_row, parent, false)
-        val params = view.layoutParams
+        val view = inflater.inflate(R.layout.daily_picks_item_row, parent, false)
+       /* val params = view.layoutParams
         params.width = (recyclerView - 60) / 2
-        width = params.width
-        Log.e("TAG", "onCreateViewHolder: "+itemsList)
-        Log.e("TAG", "onCreateViewHolder: "+itemsList.size)
+        width = params.width*/
+        Log.e("TAG", "onCreateViewHolder: " + itemsList)
+        Log.e("TAG", "onCreateViewHolder: " + itemsList.size)
         //  view.layoutParams = params
         return ViewHolder(view)
     }
@@ -53,20 +53,20 @@ class YourDailyPicksAdapter(private val context:Context,private val recyclerView
 
     inner class ViewHolder(override val containerView: View?) : RecyclerView.ViewHolder(containerView!!), LayoutContainer {
         fun bind(data: ItemHome) {
-            viewItem.visibility = View.VISIBLE
-//            llSideDividerHome.visibility = View.VISIBLE
-            ivProductImageHome.layoutParams.height = width - 16
+            // viewItem.visibility = View.VISIBLE
+            //llSideDividerHome.visibility = View.VISIBLE
+            //ivProductImageHome.layoutParams.height = width - 16
             tvNameHome.text = data.username
             tvProductHome.text = data.name
             try {
                 if (data.item_type == 1) {
                     tvConditionHome.text = "New"
-                    iv_new.visibility=View.VISIBLE
-                    iv_used.visibility=View.GONE
+                    iv_new.visibility = View.VISIBLE
+                    iv_used.visibility = View.GONE
                 } else {
                     tvConditionHome.text = context.getString(R.string.used)
-                    iv_new.visibility=View.GONE
-                    iv_used.visibility=View.VISIBLE
+                    iv_new.visibility = View.GONE
+                    iv_used.visibility = View.VISIBLE
                 }
                 if (data.is_sold == 1) {
                     tvSoldFav.visibility = View.VISIBLE
@@ -81,12 +81,12 @@ class YourDailyPicksAdapter(private val context:Context,private val recyclerView
 //                tvLikesHome.text = data.items_like_count.toString()
                 if (data.item_type == 1) {
                     tvConditionHome.text = "New"
-                    iv_new.visibility=View.VISIBLE
-                    iv_used.visibility=View.GONE
+                    iv_new.visibility = View.VISIBLE
+                    iv_used.visibility = View.GONE
                 } else {
                     tvConditionHome.text = context.getString(R.string.used)
-                    iv_new.visibility=View.GONE
-                    iv_used.visibility=View.VISIBLE
+                    iv_new.visibility = View.GONE
+                    iv_used.visibility = View.VISIBLE
                 }
                 if (!TextUtils.isEmpty(data.profile_pic)) {
                     Picasso.with(context)
@@ -100,8 +100,8 @@ class YourDailyPicksAdapter(private val context:Context,private val recyclerView
                 } else {
                     ivPicProfile.setImageResource(R.mipmap.pic_placeholder)
                 }
-                price= Utils.convertCurrency(context, data.currency!!, data.price).toString()
-            tvItemPriceHome.text = price
+                price = Utils.convertCurrency(context, data.currency!!, data.price).toString()
+                tvItemPriceHome.text = price
                 if (!TextUtils.isEmpty(data.image_url)) {
                     Picasso.with(context).load(AppConstants.IMAGE_URL + data.image_url)
                             .resize(720, 720)
@@ -135,7 +135,7 @@ class YourDailyPicksAdapter(private val context:Context,private val recyclerView
                     }
 
                 }
-            tvPostOn.text = StringBuilder().append(Utils.getDateDifference(data.created_at!!.date)).append(" ").append("ago").toString()
+                tvPostOn.text = StringBuilder().append(Utils.getDateDifference(data.created_at!!.date)).append(" ").append("ago").toString()
                 llUserProfile.setOnClickListener {
                     if (Utils.getPreferencesString(context, AppConstants.USER_ID).toInt() != data.user_id) {
                         val reportIntent = Intent(context, UserProfileActivity::class.java)

@@ -2,14 +2,14 @@ package com.verkoopapp.adapter
 
 import android.content.Context
 import android.os.Build
-import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.verkoopapp.R
 import com.verkoopapp.models.DataCategory
 import kotlinx.android.extensions.LayoutContainer
@@ -60,6 +60,11 @@ class CategoryDialogAdapter(private val context: Context, private val categoryLi
                 updateList(adapterPosition)
 
             }
+
+            Glide.with(context).load(modal.image)
+                    .placeholder(R.drawable.logo)
+                    .error(R.drawable.logo)
+                    .into(ivCategory)
         }
     }
 

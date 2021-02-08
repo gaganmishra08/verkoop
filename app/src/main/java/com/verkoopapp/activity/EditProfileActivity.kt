@@ -2,6 +2,7 @@ package com.verkoopapp.activity
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
@@ -9,15 +10,13 @@ import android.os.Bundle
 import android.os.Environment
 import android.os.Handler
 import android.provider.MediaStore
-import androidx.core.content.ContextCompat
 import android.text.TextUtils
-import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.AdapterView
+import android.widget.DatePicker
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
-import com.google.android.gms.common.util.SharedPreferencesUtils
 import com.squareup.picasso.Picasso
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
@@ -31,6 +30,7 @@ import org.greenrobot.eventbus.EventBus
 import retrofit2.Response
 import java.io.File
 import java.io.IOException
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -76,15 +76,14 @@ class EditProfileActivity : AppCompatActivity() {
                     etLastName.setText(myProfileResponse.data.last_name)
                     etWebsite.setText(myProfileResponse.data.website)
                     etBio.setText(myProfileResponse.data.bio)
-                    if (myProfileResponse.data.city.isEmpty()){
-                        etMyCity.setText(Utils.getPreferencesString(this@EditProfileActivity,AppConstants.CITY_NAME))
-                    }
-                    else{
+                    if (myProfileResponse.data.city.isEmpty()) {
+                        etMyCity.setText(Utils.getPreferencesString(this@EditProfileActivity, AppConstants.CITY_NAME))
+                    } else {
                         etMyCity.setText(myProfileResponse.data.city)
                     }
                     ccp.setCountryForNameCode(myProfileResponse.data.country_code)
                     ccp.setCountryForNameCode(myProfileResponse.data.country_code)
-                    country_Id=myProfileResponse.data.country_code
+                    country_Id = myProfileResponse.data.country_code
 //                    Log.e("TAG", "onSuccesscountry_code: "+myProfileResponse.data.country_code)
                     if (!TextUtils.isEmpty(myProfileResponse.data.mobile_no)) {
                         tvPhoneNo.text = myProfileResponse.data.mobile_no
@@ -192,7 +191,7 @@ class EditProfileActivity : AppCompatActivity() {
                 if (etFirstName.text?.toString() != null) etFirstName.text.toString() else "",
                 if (etLastName.text?.toString() != null) etLastName.text.toString() else "",
                 if (etMyCity.text?.toString() != null) etMyCity.text.toString() else "",
-                 stateName, ccp.selectedCountryName, ccp.selectedCountryNameCode, cityId.toString(), stateId.toString(), countryId.toString(),
+                stateName, ccp.selectedCountryName, ccp.selectedCountryNameCode, cityId.toString(), stateId.toString(), countryId.toString(),
                 if (etWebsite.text?.toString() != null) etWebsite.text.toString() else "",
                 if (etBio.text?.toString() != null) etBio.text.toString() else "",
                 if (mCurrentPhotoPath != null) mCurrentPhotoPath!! else "",
@@ -238,11 +237,39 @@ class EditProfileActivity : AppCompatActivity() {
     }
 
     private fun setDateDialog() {
-        Utils.setDatePicker(this, object : Utils.CurrentDate {
+        /*Utils.setDatePicker(this, tvDate.text.toString(),object : Utils.CurrentDate {
             override fun getSelectedDate(date: String) {
                 tvDate.text = date
             }
-        })
+        })*/
+        var mYear = 0
+        var mMonth:Int = 0
+        var mDay:Int = 0
+        val sdf = SimpleDateFormat("yyyy-MM-dd")
+        var date: Date? = null
+        try {
+            date = sdf.parse(tvDate.getText().toString())
+        } catch (e: ParseException) {
+            e.printStackTrace()
+        }
+        val c = Calendar.getInstance()
+        val calenderMax = Calendar.getInstance()
+        calenderMax.add(Calendar.DAY_OF_MONTH, -1)
+        c.time = date
+        mYear = c[Calendar.YEAR]
+        mMonth = c[Calendar.MONTH]
+        mDay = c[Calendar.DAY_OF_MONTH]
+
+
+        val datePickerDialog = DatePickerDialog(this, { view1: DatePicker?, year: Int, monthOfYear: Int, dayOfMonth: Int ->
+            val calendar = Calendar.getInstance()
+            calendar[year, monthOfYear] = dayOfMonth
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd")
+            val dateString = dateFormat.format(calendar.time)
+            tvDate.text = dateString
+        }, mYear, mMonth, mDay)
+        datePickerDialog.datePicker.maxDate = calenderMax.time.time
+        datePickerDialog.show()
     }
 
     private fun checkPermission(): Boolean {

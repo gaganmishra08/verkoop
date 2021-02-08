@@ -59,9 +59,9 @@ class ProfileAdapter(private val context: Context, private val screenWidth: Int,
             else -> {
 
                 view = mLayoutInflater.inflate(R.layout.item_row, parent, false)
-                val params = view.layoutParams
+               /* val params = view.layoutParams
                 params.width = screenWidth / 2
-                width = params.width
+                width = params.width*/
                 ItemsHolder(view)
             }
         }
@@ -255,7 +255,7 @@ class ProfileAdapter(private val context: Context, private val screenWidth: Int,
                 ll_condition.visibility = View.GONE
             }
             llUserProfile.visibility = View.GONE
-            ivProductImageHome.layoutParams.height = width - 16
+            //ivProductImageHome.layoutParams.height = width - 16
             if (data.is_sold == 1) {
                 tvSoldFav.visibility = View.VISIBLE
             } else {

@@ -9,7 +9,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.daimajia.slider.library.SliderTypes.BaseSliderView
@@ -21,13 +20,12 @@ import com.verkoopapp.fragment.HomeFragment
 import com.verkoopapp.models.*
 import com.verkoopapp.network.ServiceHelper
 import com.verkoopapp.utils.AppConstants
-import com.verkoopapp.utils.GridSpacingItemDecoration
 import com.verkoopapp.utils.SpacingItem
 import com.verkoopapp.utils.Utils
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.adds_category_row.*
+import kotlinx.android.synthetic.main.ads_category_row.*
 import kotlinx.android.synthetic.main.cars_properties_row.*
-import kotlinx.android.synthetic.main.item_row.*
+import kotlinx.android.synthetic.main.daily_picks_item_row.*
 import kotlinx.android.synthetic.main.your_daily_picks.*
 import retrofit2.Response
 
@@ -49,6 +47,7 @@ class HomeAdapter(private val context: Context, private val rvItemList: Int, pri
     private var dailyPicksList = ArrayList<ItemHome>()
     private var categoryList = ArrayList<Category>()
     private var advertismentsList = ArrayList<Advertisment>()
+    private var flagDecoration = false
 
     var dailyPicksAdapter: YourDailyPicksAdapter? = null
 
@@ -68,7 +67,7 @@ class HomeAdapter(private val context: Context, private val rvItemList: Int, pri
         val view: View
         return when (viewType) {
             CATEGORY_LIST_ROW -> {
-                view = mLayoutInflater.inflate(R.layout.adds_category_row, parent, false)
+                view = mLayoutInflater.inflate(R.layout.ads_category_row, parent, false)
                 val params = view.layoutParams
                 params.width = rvItemList
                 widthOrg = params.width
@@ -76,9 +75,9 @@ class HomeAdapter(private val context: Context, private val rvItemList: Int, pri
             }
             YOUR_DAILY_PICKS -> {
                 view = mLayoutInflater.inflate(R.layout.your_daily_picks, parent, false)
-                val params = view.layoutParams
+                /*val params = view.layoutParams
                 params.width = rvItemList
-                widthDaily = params.width
+                widthDaily = params.width*/
                 YourDailyPickHolder(view)
             }
             PROPERTIES_ROW -> {
@@ -94,10 +93,10 @@ class HomeAdapter(private val context: Context, private val rvItemList: Int, pri
                 ShowLoaderHolder(view)
             }
             else -> {
-                view = mLayoutInflater.inflate(R.layout.item_row, parent, false)
-                val params = view.layoutParams
-                params.width = rvItemList / 2
-                width = params.width
+                view = mLayoutInflater.inflate(R.layout.recommended_item_row, parent, false)
+                //val params = view.layoutParams
+                //params.width = rvItemList / 2
+                //width = params.width
                 //view.layoutParams = params
                 ItemsHolder(view)
             }
@@ -117,7 +116,7 @@ class HomeAdapter(private val context: Context, private val rvItemList: Int, pri
                 }
                 else {
                     (holder as YourDailyPickHolder).bind()
-                    if (comingFromOnLike.equals("YourDailyPicksAdapter")) {
+                    if (comingFromOnLike == "YourDailyPicksAdapter") {
                         if (positionOnLikeEvent > 0) {
                             val spanCount = 2 // 3 columns
 
@@ -195,7 +194,7 @@ class HomeAdapter(private val context: Context, private val rvItemList: Int, pri
             }
             mDemoSlider.setDuration(3000)
 //            rvCategoryHome.layoutParams.height = widthOrg / 3
-            val linearLayoutManager = GridLayoutManager(context, 2,GridLayoutManager.HORIZONTAL,false)
+            val linearLayoutManager = GridLayoutManager(context, 2, GridLayoutManager.HORIZONTAL, false)
             rvCategoryHome.layoutManager = linearLayoutManager
             val categoryAdapter = CategoryListAdapter(context as HomeActivity, categoryList, rvItemList)
 
@@ -248,7 +247,7 @@ class HomeAdapter(private val context: Context, private val rvItemList: Int, pri
 
     inner class ItemsHolder(override val containerView: View?) : RecyclerView.ViewHolder(containerView!!), LayoutContainer {
         fun bind(data: ItemHome) {
-            ivProductImageHome.layoutParams.height = width - 16
+            //ivProductImageHome.layoutParams.height = width - 16
             tvNameHome.text = data.username
             /* if (adapterPosition % 2 == 0) {
                  llSideDividerHome.visibility = View.VISIBLE
@@ -338,13 +337,17 @@ class HomeAdapter(private val context: Context, private val rvItemList: Int, pri
             val spacing = 20 // 50px
 
             val includeEdge = true
-            val linearLayoutManager = GridLayoutManager(context,1,RecyclerView.HORIZONTAL,false)
+            val linearLayoutManager = GridLayoutManager(context, 1, RecyclerView.HORIZONTAL, false)
             linearLayoutManager.isAutoMeasureEnabled = true
             rvYourDailyPicks.layoutManager = linearLayoutManager
             Log.e("<<YourDailyPickHolder>>", rvItemList.toString())
-//            val dailyPicksAdapter = YourDailyPicksAdapter(context, rvItemList, itemsList, homeFragment)
+            //val dailyPicksAdapter = YourDailyPicksAdapter(context, rvItemList, itemsList, homeFragment)
             dailyPicksAdapter = YourDailyPicksAdapter(context, rvItemList, itemsList, homeFragment)
-            rvYourDailyPicks.addItemDecoration(SpacingItem(spanCount, spacing, includeEdge))
+
+            /*if (!flagDecoration) {
+                rvYourDailyPicks.addItemDecoration(SpacingItem(spanCount, spacing, includeEdge))
+                flagDecoration = true
+            }*/
             rvYourDailyPicks.setHasFixedSize(true)
             rvYourDailyPicks.adapter = dailyPicksAdapter
             tvViewAllDailyPicks.setOnClickListener {

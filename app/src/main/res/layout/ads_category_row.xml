@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="480dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:id="@+id/roundRectView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+            android:layout_margin="@dimen/dp_12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:shape_roundRect_bottomLeftRadius="@dimen/dp_12"
+                app:shape_roundRect_bottomRightRadius="@dimen/dp_12"
+                app:shape_roundRect_topLeftRadius="@dimen/dp_12"
+                app:shape_roundRect_topRightRadius="@dimen/dp_12">
+
+            <com.daimajia.slider.library.SliderLayout
+                android:id="@+id/mDemoSlider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_180"
+                app:indicator_visibility="invisible" />
+        </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+        <LinearLayout
+            android:id="@+id/llCatView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:padding="@dimen/dp_8">
+
+            <com.verkoopapp.fonts.textView.GothiBoldTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                android:text="@string/categories"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_18" />
+
+            <com.verkoopapp.fonts.textView.GothicThinTextView
+                android:id="@+id/tvViewAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:drawableEnd="@drawable/ic_arrow_white_right"
+                android:drawableTint="@color/text_gray"
+                android:gravity="center_vertical"
+                android:text="@string/view_all"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/sp_14" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategoryHome"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_250"
+            tools:listitem="@layout/category_home_row" />
+
+    </LinearLayout>
+</LinearLayout>

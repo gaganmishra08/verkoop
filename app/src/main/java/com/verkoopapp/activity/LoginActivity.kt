@@ -11,6 +11,8 @@ import androidx.core.content.ContextCompat
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -33,7 +35,6 @@ import com.verkoopapp.utils.*
 import kotlinx.android.synthetic.main.dialog_update_country.*
 import kotlinx.android.synthetic.main.login_activity.*
 import kotlinx.android.synthetic.main.login_activity.back_button
-import kotlinx.android.synthetic.main.signup_activity.*
 import org.json.JSONException
 import retrofit2.Response
 import java.util.*
@@ -52,6 +53,7 @@ class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLis
     private var countryName: String = ""
     private var id = 0
     private var type = 0
+    private var showHidePassword = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_activity)
@@ -203,6 +205,10 @@ class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLis
             startActivity(intent)
         }
 
+        ivShowHidePassword.setOnClickListener {
+            showHidePass()
+        }
+
         etEmail.addTextChangedListener(object : TextWatcher {
             override fun onTextChanged(cs: CharSequence, arg1: Int, arg2: Int, arg3: Int) {
             }
@@ -236,6 +242,16 @@ class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLis
                 }
             }
         })
+    }
+
+    private fun showHidePass(){
+        if (etPassword.transformationMethod == PasswordTransformationMethod.getInstance()){
+            ivShowHidePassword.setImageResource(R.mipmap.password_show)
+            etPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+        }else{
+            ivShowHidePassword.setImageResource(R.mipmap.password_hide)
+            etPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+        }
     }
 
     private fun isValidate(): Boolean {

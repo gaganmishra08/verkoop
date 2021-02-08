@@ -25,14 +25,14 @@
                     android:layout_gravity="center"
                     android:contentDescription="@string/image" />
 
-                <com.verkoopapp.fonts.textView.GothiBoldTextView
+                <com.verkoopapp.fonts.textView.GothicThinTextView
                     android:id="@+id/tvLevelBrand"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp_8"
                     android:text="Women's"
                     android:gravity="center"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/sp_12" />
             </LinearLayout>
 

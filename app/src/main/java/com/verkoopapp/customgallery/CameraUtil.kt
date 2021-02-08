@@ -13,54 +13,57 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-  class CameraUtil {
+class CameraUtil {
     companion object {
-         var savePathReal: String? = null
+        var savePathReal: String? = null
     }
 
 
-     fun takePictureCamera(activity: Activity, saveDir: String) {
-         Log.e("TAG", "takePicture: "+saveDir)
-        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-         Log.e("TAG", "takePictureCamera: "+takePictureIntent.resolveActivity(activity.packageManager))
-//        if (takePictureIntent.resolveActivity(activity.packageManager) != null) {
-            Log.e("TAG", "takePictureCameraif: "+saveDir)
-            // Create the File where the photo should go
-            var photoFile: File? = null
-            try {
-                Log.e("TAG", "takePictureCamera: "+createImageFile(saveDir))
-                photoFile = createImageFile(saveDir) //make a file
+    fun takePictureCamera(activity: Activity, saveDir: String) {
+        Log.e("TAG", "takePicture: " + saveDir)
 
-                Log.e("TAG", "takePictureCamera: "+photoFile)
-                savePathReal = photoFile.absolutePath
-                Log.e("TAG", "takePictureCamera: "+ savePathReal)
-            }
+        val f = File(saveDir)
+        if (!f.exists()) f.mkdirs()
+        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        Log.e("TAG", "takePictureCamera: " + takePictureIntent.resolveActivity(activity.packageManager))
+        //if (takePictureIntent.resolveActivity(activity.packageManager) != null) {
+        Log.e("TAG", "takePictureCameraif: " + saveDir)
+        //Create the File where the photo should go
+        var photoFile: File? = null
+        try {
+            Log.e("TAG", "takePictureCamera: " + createImageFile(saveDir))
+            photoFile = createImageFile(saveDir) //make a file
+
+            Log.e("TAG", "takePictureCamera: " + photoFile)
+            savePathReal = photoFile.absolutePath
+            Log.e("TAG", "takePictureCamera: " + savePathReal)
+        }
 //            catch (ex: IOException) {
 //                ex.printStackTrace()
 //
 //                Log.e("TAG", "takePictureCameraex: "+ex.message)
 //                // Error occurred while creating the File
 //            }
-            catch (exe: Exception) {
-                exe.printStackTrace()
+        catch (exe: Exception) {
+            exe.printStackTrace()
 
-                Log.e("TAG", "takePictureCameraexe: "+exe.message)
-                // Error occurred while creating the File
+            Log.e("TAG", "takePictureCameraexe: " + exe.message)
+            // Error occurred while creating the File
+        }
+
+        // Continue only if the File was successfully created
+        if (photoFile != null) {
+            val uri: Uri
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                uri = FileProvider.getUriForFile(activity,
+                        activity.applicationContext.packageName + ".provider", photoFile)
+            } else {
+                uri = Uri.fromFile(photoFile)
             }
+            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri)
 
-            // Continue only if the File was successfully created
-            if (photoFile != null) {
-                val uri: Uri
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    uri = FileProvider.getUriForFile(activity,
-                            activity.applicationContext.packageName + ".provider", photoFile)
-                } else {
-                    uri = Uri.fromFile(photoFile)
-                }
-                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri)
-
-                activity.startActivityForResult(takePictureIntent, Define().TAKE_A_PICK_REQUEST_CODE)
-            }
+            activity.startActivityForResult(takePictureIntent, Define().TAKE_A_PICK_REQUEST_CODE)
+        }
 //        }
 
     }
@@ -68,13 +71,14 @@ import java.util.*
     @Throws(IOException::class)
     private fun createImageFile(saveDir: String): File {
         // Create an image file name
-//        Log.e("TAG", "createImageFile: "+saveDir)
+        //Log.e("TAG", "createImageFile: "+saveDir)
         val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         val imageFileName = "JPEG_" + timeStamp + "_"
         val storageDir = File(saveDir)
-        Log.e("TAG", "createImageFile: "+timeStamp)
-        Log.e("TAG", "createImageFile: "+imageFileName)
-        Log.e("TAG", "createImageFile: "+storageDir)
+        if (!storageDir.exists()) storageDir.mkdirs()
+        Log.e("TAG", "createImageFile: " + timeStamp)
+        Log.e("TAG", "createImageFile: " + imageFileName)
+        Log.e("TAG", "createImageFile: " + storageDir)
 
         return File.createTempFile(
                 imageFileName, /* prefix */
@@ -82,11 +86,12 @@ import java.util.*
                 storageDir      /* directory */
         )
     }
-      internal fun getSavePath(): String? {
-          return savePathReal
-      }
 
-      internal fun setSavePath(savePath: String) {
-          savePathReal=savePath
-      }
+    internal fun getSavePath(): String? {
+        return savePathReal
+    }
+
+    internal fun setSavePath(savePath: String) {
+        savePathReal = savePath
+    }
 }

@@ -22,16 +22,7 @@ import com.verkoopapp.utils.AppConstants
 import com.verkoopapp.utils.DeleteCommentDialog
 import com.verkoopapp.utils.SelectionListener
 import com.verkoopapp.utils.Utils
-import kotlinx.android.synthetic.main.chat_inbox_activity.rvChatInbox
-import kotlinx.android.synthetic.main.chat_inbox_activity.llAll
-import kotlinx.android.synthetic.main.chat_inbox_activity.llBuying
-import kotlinx.android.synthetic.main.chat_inbox_activity.llSelling
-import kotlinx.android.synthetic.main.chat_inbox_activity.tvAll
-import kotlinx.android.synthetic.main.chat_inbox_activity.tvBuying
-import kotlinx.android.synthetic.main.chat_inbox_activity.tvSelling
-import kotlinx.android.synthetic.main.chat_inbox_activity.vAll
-import kotlinx.android.synthetic.main.chat_inbox_activity.vBuying
-import kotlinx.android.synthetic.main.chat_inbox_activity.vSelling
+import kotlinx.android.synthetic.main.chat_inbox_activity.*
 import kotlinx.android.synthetic.main.toolbar_chat.ivLeftLocation
 import kotlinx.android.synthetic.main.toolbar_chat.tvRight
 import org.json.JSONException
@@ -75,7 +66,6 @@ public class ChatInboxActivity : AppCompatActivity(), ChatInboxAdapter.DeleteCha
         dbHelper = DbHelper()
         setData()
         setAdapter()
-
     }
 
     override fun onResume() {
@@ -225,6 +215,14 @@ public class ChatInboxActivity : AppCompatActivity(), ChatInboxAdapter.DeleteCha
         adapterInboxAllList.addAll(chatInboxAllList)
         chatInboxAdapter.setData(adapterInboxAllList)
         chatInboxAdapter.notifyDataSetChanged()
+
+        if (adapterInboxAllList.size==0){
+            rlNoData.visibility=View.VISIBLE
+            rvChatInbox.visibility=View.GONE
+        }else{
+            rlNoData.visibility=View.GONE
+            rvChatInbox.visibility=View.VISIBLE
+        }
     }
 
     private fun setAdapter() {
@@ -307,6 +305,14 @@ public class ChatInboxActivity : AppCompatActivity(), ChatInboxAdapter.DeleteCha
         adapterInboxAllList.addAll(sellerList)
         chatInboxAdapter.setData(adapterInboxAllList)
         chatInboxAdapter.notifyDataSetChanged()
+
+        if (adapterInboxAllList.size==0){
+            rlNoData.visibility=View.VISIBLE
+            rvChatInbox.visibility=View.GONE
+        }else{
+            rlNoData.visibility=View.GONE
+            rvChatInbox.visibility=View.VISIBLE
+        }
     }
 
     private fun getChatBuyerList() {
@@ -345,6 +351,14 @@ public class ChatInboxActivity : AppCompatActivity(), ChatInboxAdapter.DeleteCha
         adapterInboxAllList.addAll(buyerList)
         chatInboxAdapter.setData(adapterInboxAllList)
         chatInboxAdapter.notifyDataSetChanged()
+
+        if (adapterInboxAllList.size==0){
+            rlNoData.visibility=View.VISIBLE
+            rvChatInbox.visibility=View.GONE
+        }else{
+            rlNoData.visibility=View.GONE
+            rvChatInbox.visibility=View.VISIBLE
+        }
     }
 
     private fun setArchiveChatEvent(senderId: Int, receiverId: Int, itemId: Int, adapterPosition: Int, swipe: SwipeLayout) {

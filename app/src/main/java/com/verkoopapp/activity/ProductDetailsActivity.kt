@@ -324,16 +324,20 @@ class ProductDetailsActivity : AppCompatActivity() {
         if (data.is_like) {
             isLiked = true
             tvLikes.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_favorite_colored, 0, 0, 0)
+            tvBottomLikes.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_favorite_colored, 0, 0, 0)
         } else {
             isLiked = false
             tvLikes.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_favorite_grey, 0, 0, 0)
+            tvBottomLikes.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_favorite_grey, 0, 0, 0)
         }
 
         if (userId == Utils.getPreferencesString(this, AppConstants.USER_ID).toInt()) {
             tvLikes.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_favorite_colored, 0, 0, 0)
+            tvBottomLikes.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_favorite_colored, 0, 0, 0)
         }
 
-        tvLikes.text = data.items_like_count.toString()
+        tvLikes.text = data.items_like_count.toString()+" Likes"
+        tvBottomLikes.text = data.items_like_count.toString()
         likeInitialCount = data.items_like_count
         likeCount = data.items_like_count
         likeId = data.like_id
@@ -351,6 +355,23 @@ class ProductDetailsActivity : AppCompatActivity() {
                 }
                 Handler().postDelayed(Runnable {
                     tvLikes.isEnabled = true
+                }, 1000)
+            }
+        }
+        tvBottomLikes.setOnClickListener {
+            if (userId != Utils.getPreferencesString(this, AppConstants.USER_ID).toInt()) {
+                tvBottomLikes.isEnabled = false
+                if (!isClicked) {
+                    if (likeId > 0) {
+                        isClicked = !isClicked
+                        deleteLikeApi(adapterPosition - 1, likeId)
+                    } else {
+                        isClicked = !isClicked
+                        likedApi(data.id, adapterPosition - 1)
+                    }
+                }
+                Handler().postDelayed(Runnable {
+                    tvBottomLikes.isEnabled = true
                 }, 1000)
             }
         }
@@ -535,10 +556,13 @@ class ProductDetailsActivity : AppCompatActivity() {
     private fun setLikeData() {
         if (isLiked == true) {
             tvLikes.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_favorite_colored, 0, 0, 0)
+            tvBottomLikes.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_favorite_colored, 0, 0, 0)
         } else {
             tvLikes.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_favorite_grey, 0, 0, 0)
+            tvBottomLikes.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_favorite_grey, 0, 0, 0)
         }
-        tvLikes.text = likeCount.toString()
+        tvLikes.text = likeCount.toString()+" Likes"
+        tvBottomLikes.text = likeCount.toString()
 
 
     }
@@ -910,6 +934,7 @@ class ProductDetailsActivity : AppCompatActivity() {
 
     private fun sharedDetails(type: Int) {
 
+
         val buo = BranchUniversalObject()
                 .setCanonicalIdentifier("content/12345")
                 //.setCanonicalIdentifier("content/12345")
@@ -919,11 +944,13 @@ class ProductDetailsActivity : AppCompatActivity() {
                 .setContentIndexingMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
                 .setLocalIndexMode(BranchUniversalObject.CONTENT_INDEX_MODE.PUBLIC)
                 .setContentMetadata(ContentMetadata()
+                        .addImageCaptions("#1111112")
                         .addCustomMetadata("product_id", itemId.toString())
                         .addCustomMetadata("type", 1.toString()))
         val lp = LinkProperties()
                 .setChannel("sms")
                 .setFeature("sharing")
+
 
         buo.generateShortUrl(this, lp) { url, error ->
             if (error == null) {

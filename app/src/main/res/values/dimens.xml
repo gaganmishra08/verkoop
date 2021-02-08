@@ -2,4 +2,11 @@
 <resources>
     <dimen name="sp_17">17sp</dimen>
     <dimen name="sp_15">15sp</dimen>
+    <dimen name="dp_56">56dp</dimen>
+    <dimen name="sp_13">16sp</dimen>
+    <dimen name="dp_48">48dp</dimen>
+    <dimen name="dp_42">42dp</dimen>
+    <dimen name="dp_148">148dp</dimen>
+    <dimen name="dp_144">144dp</dimen>
+    <dimen name="dp_146">146dp</dimen>
 </resources>

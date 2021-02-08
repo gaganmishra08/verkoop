@@ -30,7 +30,7 @@
             android:background="@drawable/white_rectangular_shape"
             android:drawablePadding="@dimen/dp_10"
             android:drawableStart="@mipmap/search"
-            android:hint="@string/search"
+            android:hint="@string/search_city"
             android:imeOptions="actionSearch"
             android:inputType="text"
             android:maxLines="1"

@@ -12,7 +12,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
+        android:layout_height="?actionBarSize"
         android:background="@color/white"
         android:elevation="5dp">
 
@@ -64,17 +64,17 @@
                     android:layout_width="@dimen/dp_150"
                     android:layout_height="@dimen/dp_150"
                     android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/dp_50"
+                    android:layout_marginTop="@dimen/dp_32"
                     android:contentDescription="@string/app_logo"
                     android:src="@drawable/logo" />
 
-<!--                <com.verkoopapp.fonts.textView.GothiBoldTextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:text="@string/login"-->
-<!--                    android:textColor="@color/light_gray"-->
-<!--                    android:textSize="@dimen/sp_24" />-->
+                <!--                <com.verkoopapp.fonts.textView.GothiBoldTextView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_gravity="center"-->
+                <!--                    android:text="@string/login"-->
+                <!--                    android:textColor="@color/light_gray"-->
+                <!--                    android:textSize="@dimen/sp_24" />-->
 
                 <LinearLayout
                     android:layout_marginBottom="@dimen/dp_10"
@@ -115,11 +115,11 @@
                 </LinearLayout>
 
 
-<!--                <View-->
-<!--                    android:id="@+id/vEmail"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="@dimen/dp_1"-->
-<!--                    android:background="@color/light_gray" />-->
+                <!--                <View-->
+                <!--                    android:id="@+id/vEmail"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="@dimen/dp_1"-->
+                <!--                    android:background="@color/light_gray" />-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -140,7 +140,13 @@
                         android:background="@color/light_gray">
 
                     </View>
-                    <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                    <com.verkoopapp.fonts.editText.GothicThinEditText
                         android:id="@+id/etPassword"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_50"
@@ -153,19 +159,28 @@
                         android:maxLength="80"
                         android:textStyle="normal"
                         android:maxLines="1"
+                        android:layout_toStartOf="@+id/ivShowHidePassword"
                         android:padding="@dimen/dp_10"
                         android:textColor="@color/colorPrimary"
-                        app:drawable_hide="@mipmap/password_hide"
-                        app:drawable_show="@mipmap/password_show"
                         tools:ignore="MissingClass" />
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivShowHidePassword"
+                        android:layout_width="@dimen/dp_40"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_height="@dimen/dp_40"
+                        android:padding="@dimen/dp_10"
+                        app:srcCompat="@mipmap/password_hide"
+                        android:layout_gravity="center"/>
+                    </RelativeLayout>
                 </LinearLayout>
 
 
-<!--                <View-->
-<!--                    android:id="@+id/vPassword"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="@dimen/dp_1"-->
-<!--                    android:background="@color/light_gray" />-->
+                <!--                <View-->
+                <!--                    android:id="@+id/vPassword"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="@dimen/dp_1"-->
+                <!--                    android:background="@color/light_gray" />-->
 
                 <com.verkoopapp.fonts.textView.GothicThinTextView
                     android:id="@+id/tvForgotPassword"
@@ -178,26 +193,26 @@
 
 
 
-                    <com.verkoopapp.fonts.textView.GothicThinTextView
-                       android:id="@+id/tvLogin"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_45"
-                        android:background="@drawable/button_background_capsule"
-                        android:gravity="center"
-                        android:textSize="@dimen/sp_18"
-                        android:padding="@dimen/dp_10"
-                        android:text="@string/login_new"
-                        android:layout_marginTop="@dimen/dp_30"
-                        android:layout_marginLeft="@dimen/dp_20"
-                        android:layout_marginRight="@dimen/dp_20"
-                        android:textColor="@color/white" />
+                <com.verkoopapp.fonts.textView.GothicThinTextView
+                    android:id="@+id/tvLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_45"
+                    android:background="@drawable/button_background_capsule"
+                    android:gravity="center"
+                    android:textSize="@dimen/sp_18"
+                    android:padding="@dimen/dp_10"
+                    android:text="@string/login_new"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:textColor="@color/white" />
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_18"
                     android:orientation="horizontal">
 
                     <com.verkoopapp.fonts.textView.GothicThinTextView
@@ -245,8 +260,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_20"
-                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_18"
+                    android:layout_marginTop="@dimen/dp_18"
                     android:gravity="center"
                     android:orientation="vertical">
 

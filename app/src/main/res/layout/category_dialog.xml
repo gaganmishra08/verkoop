@@ -18,14 +18,31 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.verkoopapp.fonts.textView.GothicThinTextView
-                android:id="@+id/tvCategoryNameDialog"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/dp_10"
-                android:text="@string/men_s_fashion"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp_14" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivCategory"
+                    android:layout_width="@dimen/dp_32"
+                    android:padding="@dimen/dp_4"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_marginEnd="@dimen/dp_6"
+                    android:src="@drawable/logo"
+                    app:civ_circle_background_color="@color/gray"
+                    android:layout_gravity="center_vertical" />
+
+                <com.verkoopapp.fonts.textView.GothicThinTextView
+                    android:id="@+id/tvCategoryNameDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingTop="@dimen/dp_8"
+                    android:paddingBottom="@dimen/dp_8"
+                    android:text="@string/men_s_fashion"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
 
             <View
                 android:layout_width="match_parent"

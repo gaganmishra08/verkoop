@@ -1,6 +1,7 @@
 package com.verkoopapp.adapter
 
 import android.content.Context
+import android.graphics.Color
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
@@ -46,7 +47,6 @@ class CategoryAdapter(private var context: Context, private val categoryList: Ar
         fun bind(data: DataCategory, position: Int) {
             tvLevel.text = data.name
             if (!TextUtils.isEmpty(data.image)) {
-
 //                GlideToVectorYou
 //                        .init()
 //                        .with(context)
@@ -57,6 +57,8 @@ class CategoryAdapter(private var context: Context, private val categoryList: Ar
                         .centerInside()
                         .error(R.drawable.ic_settings)
                         .into(ivItemsCategory)
+
+                //ivItemsCategory.setColorFilter(Color.argb(255, 156, 156, 156));
             }
             llParent.setOnClickListener {
                 if (data.isSelected) {

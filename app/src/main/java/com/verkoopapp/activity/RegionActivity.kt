@@ -52,7 +52,6 @@ class RegionActivity : AppCompatActivity(), RegionAdapter.ClickEventCallBack {
     }
 
     private fun setAdapter() {
-        etSearchPlace.hint = getString(R.string.search_city)
         val mManager = LinearLayoutManager(this)
         rvLocation.layoutManager = mManager
         regionAdapter = RegionAdapter(this, 0)
@@ -77,7 +76,7 @@ class RegionActivity : AppCompatActivity(), RegionAdapter.ClickEventCallBack {
                     statelist = responseState.data.state
                     regionAdapter.setData(statelist)
                     regionAdapter.notifyDataSetChanged()
-//                    val intent = Intent(this@EditProfileActivity, TransferCoinsActivity::class.java)
+    //  val intent = Intent(this@EditProfileActivity, TransferCoinsActivity::class.java)
 
 
                 } else {
@@ -152,6 +151,7 @@ class RegionActivity : AppCompatActivity(), RegionAdapter.ClickEventCallBack {
 
     private fun setData() {
         tvHeaderLoc.text = getString(R.string.region)
+        etSearchPlace.hint = getString(R.string.search_region)
         ivLeftLocation.setOnClickListener {
             onBackPressed()
         }

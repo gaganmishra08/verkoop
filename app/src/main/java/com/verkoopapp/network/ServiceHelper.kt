@@ -1846,7 +1846,7 @@ class ServiceHelper {
             }
 
             override fun onFailure(call: Call<ChatImageResponse>, t: Throwable) {
-                //   Log.d(LOG_TAG, "<<<Error>>>" + t.localizedMessage)
+                Log.d("ServiceHelper", "<<<Error>>>" + t.localizedMessage)
                 onResponse.onFailure("Something went wrong!")
 
             }

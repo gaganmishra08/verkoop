@@ -12,22 +12,25 @@ import android.util.Log
 import com.verkoopapp.activity.GalleryActivity
 import com.verkoopapp.models.ImageModal
 import com.verkoopapp.utils.Utils.checkGif
-import java.util.ArrayList
+import java.io.File
+import java.util.*
 
 
- class PickerController internal constructor(private val pickerActivity: GalleryActivity) {
+class PickerController internal constructor(private val pickerActivity: GalleryActivity) {
 
-     private var addImagePaths = ArrayList<Uri>()
+    private var addImagePaths = ArrayList<Uri>()
 
     private val resolver: ContentResolver = pickerActivity.contentResolver
-     private var cameraUtil = CameraUtil()
+    private var cameraUtil = CameraUtil()
     private var pathDir = ""
 
 
-     fun takePicture(activity: Activity, saveDir: String) {
-       val cameraUtil= CameraUtil()
-         Log.e("TAG", "takePicture: "+saveDir)
-        cameraUtil.takePictureCamera(activity,saveDir)
+    fun takePicture(activity: Activity, saveDir: String) {
+        val cameraUtil = CameraUtil()
+        Log.e("TAG", "takePicture: " + saveDir)
+        val storageDir = File(saveDir)
+        if (!storageDir.exists()) storageDir.mkdirs()
+        cameraUtil.takePictureCamera(activity, saveDir)
     }
 
     fun setAddImagePath(imagePath: Uri) {
@@ -50,7 +53,7 @@ import java.util.ArrayList
 
         override fun onPostExecute(result: ArrayList<ImageModal>) {
             super.onPostExecute(result)
-           pickerActivity.setAdapterData(result)
+            pickerActivity.setAdapterData(result)
         }
     }
 
@@ -70,7 +73,7 @@ import java.util.ArrayList
             resolver.query(images, null, null, null, sort)
         }
         val imageUris = ArrayList<ImageModal>()
-        val imagemodal=ImageModal("",false,true,0,0,false,0)
+        val imagemodal = ImageModal("", false, true, 0, 0, false, 0)
         imageUris.add(imagemodal)
         if (c != null) {
             try {
@@ -83,7 +86,7 @@ import java.util.ArrayList
                             continue
                         val imgId = c.getInt(c.getColumnIndex(MediaStore.MediaColumns._ID))
                         val path = Uri.withAppendedPath(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "" + imgId)
-                        val imageModal=ImageModal(path.toString(),false,false,0,0,true,0)
+                        val imageModal = ImageModal(path.toString(), false, false, 0, 0, true, 0)
                         imageUris.add(imageModal)
 
                     } while (c.moveToNext())
@@ -97,21 +100,23 @@ import java.util.ArrayList
         return imageUris
     }
 
-     private fun setPathDir(path: String, fileName: String): String {
-         return   path.replace("/" + fileName, "")
-     }
+    private fun setPathDir(path: String, fileName: String): String {
+        return path.replace("/" + fileName, "")
+    }
 
-     fun getPathDir(bucketId: Long): String {
-         if (pathDir == "" || bucketId == 0L)
-             pathDir = Environment.getExternalStoragePublicDirectory(
-                     Environment.DIRECTORY_DCIM + "/Camera").absolutePath
-         return pathDir
-     }
+    fun getPathDir(bucketId: Long): String {
+        if (pathDir == "" || bucketId == 0L)
+            pathDir = Environment.getExternalStoragePublicDirectory(
+                    Environment.DIRECTORY_DCIM + "/Camera").absolutePath
+        val storageDir = File(pathDir)
+        if (!storageDir.exists()) storageDir.mkdirs()
+        return pathDir
+    }
 
 
-     internal fun getSavePath(): String {
-         return cameraUtil.getSavePath()!!
-     }
+    internal fun getSavePath(): String {
+        return cameraUtil.getSavePath()!!
+    }
 
- }
+}
 

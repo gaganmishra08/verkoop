@@ -23,7 +23,7 @@ import com.verkoopapp.network.ServiceHelper
 import com.verkoopapp.utils.AppConstants
 import com.verkoopapp.utils.Utils
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.adds_category_row.*
+import kotlinx.android.synthetic.main.ads_category_row.*
 import kotlinx.android.synthetic.main.banner_row.*
 import kotlinx.android.synthetic.main.item_row.*
 import retrofit2.Response

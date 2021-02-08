@@ -54,10 +54,12 @@
     <string name="profile">Profile</string>
     <string name="favourite">favourite</string>
     <string name="favourites">Favourites</string>
+    <string name="my_favourite">My Favourite</string>
     <string name="chat">chat</string>
     <string name="category">Category</string>
     <string name="search">Search Products</string>
-    <string name="search_city">Search Region</string>
+    <string name="search_region">Search Region</string>
+    <string name="search_city">Search City</string>
     <string name="search_cars">Search cars</string>
     <string name="sell">SELL</string>
     <string name="view_all">View All</string>

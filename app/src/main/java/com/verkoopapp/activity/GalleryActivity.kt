@@ -37,6 +37,7 @@ class GalleryActivity : AppCompatActivity(), GalleryAdapter.ImageCountCallBack {
     private var selectedImageList = ArrayList<ImageModal>()
     private val imageUris = ArrayList<ImageModal>()
     private var addItemsRequest: AddItemRequest? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.gallery_activity)
